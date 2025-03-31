@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Kanji {
+  id              String     @id @default(auto()) @map("_id") @db.ObjectId
+  kanji           String
+  meaning         String
+  kana            String[]
+  kanjiPoint      Int
+  exampleSentences Sentence[] @relation("KanjiSentences") // Relation name
+  isDeleted       Boolean?   @default(false)
+  deletedAt       DateTime?
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+}
+
+model Sentence {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  sentence  String
+  meaning   String
+  kana      String
+  counter   Int      @default(0)
+  kanjiId   String   @db.ObjectId
+  kanji     Kanji    @relation(fields: [kanjiId], references: [id], name: "KanjiSentences")
+}

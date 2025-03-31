@@ -1,0 +1,2198 @@
+[
+  {
+    "question": "Fill in the blank: 先生は教室で生徒を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は友人を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 母は子供を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 店員はお客様を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は犬を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 駅で彼は知人を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 公園で子供たちを＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 喧嘩の後、彼は仲裁者に＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 遠くにいる友達を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: イベントで司会者が参加者を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 病院で看護師が患者を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 教室で先生が注意を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 空港で案内員が旅行者を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: レストランでウェイターが客を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 市場で店主が客を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 公演で司会者が出演者を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 電話で彼は相手を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 会議で司会者がメンバーを＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 祭りで住民を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 道端で彼は知人を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 部屋で友達を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 遠足で先生が生徒を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 家で父が子供を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 会場でスタッフが観客を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は今日の授業で生徒を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は夜に友人を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 母は夕食前に子供を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 店員は特別な客を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女はパーティーで友人を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 駅前で彼は知人を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 公園で元気な子供たちを＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: トラブルが起こると、彼は助けを＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 遠く離れた家族を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: イベントで司会者が参加者を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 病院で医師が看護師を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 教室で先生が静かに生徒を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 空港で係員が旅行者を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: レストランでウェイターが新しい客を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 市場で商人が客を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 公演で司会者が出演者を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 電話で彼は家族を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 会議でリーダーがメンバーを＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 祭りで主催者が住民を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 通りで彼は偶然の知人を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: リビングで友達を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 遠足中に先生が生徒を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 自宅で父が子供を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 休日に彼が親戚を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 会場でスタッフが観客を＿＿。",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は元気にクラスを＿＿（呼ぶ）。",
+    "choices": ["呼ぶ", "走る", "聞く"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 友達を急いで＿＿時、彼は笑顔だった。",
+    "choices": ["呼ぶ", "走る", "話す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Choose the correct kanji: Which of the following means 'to call'?",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 電話が鳴ると、彼はすぐに＿＿。",
+    "choices": ["呼ぶ", "走る", "答える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: クラスで先生が出席を＿＿。",
+    "choices": ["呼ぶ", "走る", "書く"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で司会者が参加者を＿＿。",
+    "choices": ["呼ぶ", "走る", "見る"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 校庭で教師が生徒を＿＿。",
+    "choices": ["呼ぶ", "走る", "歌う"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は道で友人を＿＿。",
+    "choices": ["呼ぶ", "走る", "待つ"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 会議室で上司が部下を＿＿。",
+    "choices": ["呼ぶ", "走る", "見る"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 映画館でスタッフが客を＿＿。",
+    "choices": ["呼ぶ", "走る", "誘う"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女はパーティーで皆を＿＿。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 広場で司会者が観衆を＿＿。",
+    "choices": ["呼ぶ", "走る", "集める"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 校門前で教師が生徒を＿＿。",
+    "choices": ["呼ぶ", "走る", "見る"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は誕生日パーティーで友人を＿＿。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式の開始前に司会者が皆を＿＿。",
+    "choices": ["呼ぶ", "走る", "紹介する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は電話で急いで家族を＿＿。",
+    "choices": ["呼ぶ", "走る", "探す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 会場で進行役が参加者を＿＿。",
+    "choices": ["呼ぶ", "走る", "誘う"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 学校で校長が教師を＿＿。",
+    "choices": ["呼ぶ", "走る", "褒める"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 集会で司会者が来場者を＿＿。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は試合前にチームメイトを＿＿。",
+    "choices": ["呼ぶ", "走る", "励ます"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典の最中に司会者が＿＿役を務めた。",
+    "choices": ["呼ぶ", "走る", "語る"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は会議中に重要な人物を＿＿。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は緊急時にすぐ誰かを＿＿。",
+    "choices": ["呼ぶ", "走る", "助ける"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: イベント開始前にスタッフが全員を＿＿。",
+    "choices": ["呼ぶ", "走る", "並ぶ"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は誕生日にサプライズで友人を＿＿。",
+    "choices": ["呼ぶ", "走る", "祝う"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典後、主催者が記念撮影のために皆を＿＿。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼はパーティーで声を張って友人を＿＿。",
+    "choices": ["呼ぶ", "走る", "笑う"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 校庭で先生が休み時間に生徒を＿＿。",
+    "choices": ["呼ぶ", "走る", "呼吸する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 公園で親が子供を＿＿ために声をかけた。",
+    "choices": ["呼ぶ", "走る", "見守る"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 集合場所で案内役が参加者を＿＿ように頼んだ。",
+    "choices": ["呼ぶ", "走る", "導く"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女はステージ上で次の出演者を＿＿。",
+    "choices": ["呼ぶ", "走る", "紹介する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で司会者がゲストを＿＿。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼はスポーツイベントで仲間を＿＿。",
+    "choices": ["呼ぶ", "走る", "応援する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 映画の撮影現場で監督が俳優を＿＿。",
+    "choices": ["呼ぶ", "走る", "指示する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式の準備のためにスタッフが各部門を＿＿。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は友達をパーティーに＿＿ために電話した。",
+    "choices": ["呼ぶ", "走る", "招待する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 学園祭で先生がクラスを＿＿ように声をかけた。",
+    "choices": ["呼ぶ", "走る", "励ます"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は緊急時にすぐ家族を＿＿ことにした。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典の前に全員を＿＿ため、係員が準備した。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は大切な知らせを伝えるために友人を＿＿。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式の後、関係者全員を＿＿ために広場に集めた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は重要な発表の前にスタッフを＿＿よう指示した。",
+    "choices": ["呼ぶ", "走る", "呼び寄せる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Choose the correct kanji: Which of the following means 'to call'?",
+    "choices": ["呼ぶ", "走る", "食べる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 友達の集まりで誰かを＿＿ために声をかけた。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は夜中に緊急連絡のため、すぐに家族を＿＿。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典開始前に司会者が全員を＿＿よう促した。",
+    "choices": ["呼ぶ", "走る", "導く"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 学校で先生がクラス全体を＿＿ことで注意を促した。",
+    "choices": ["呼ぶ", "走る", "褒める"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女はイベントの開始を知らせるために皆を＿＿。",
+    "choices": ["呼ぶ", "走る", "起こす"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は会議の前に全員に連絡を＿＿。",
+    "choices": ["呼ぶ", "走る", "知らせる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 友人を急いで＿＿時、彼は少し焦っていた。",
+    "choices": ["呼ぶ", "走る", "駆ける"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式の準備のため、係員が参加者を＿＿よう呼びかけた。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は誕生日パーティーで主催者に＿＿ようお願いした。",
+    "choices": ["呼ぶ", "走る", "頼む"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 祭りの準備で、スタッフが全員を＿＿。",
+    "choices": ["呼ぶ", "走る", "集める"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 学校行事で先生が生徒を＿＿と呼んだ。",
+    "choices": ["呼ぶ", "走る", "呼ぶ（読む）"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: クラブ活動でリーダーが新メンバーを＿＿。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は公園で誰かを＿＿声をかけた。",
+    "choices": ["呼ぶ", "走る", "探す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: イベント会場で係員が来場者を＿＿ためにマイクを使った。",
+    "choices": ["呼ぶ", "走る", "誘導する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で司会者が壇上に＿＿ため合図を送った。",
+    "choices": ["呼ぶ", "走る", "招く"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は電話で急いで友人を＿＿。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は授業前に生徒を＿＿音を聞かせた。",
+    "choices": ["呼ぶ", "走る", "起こす"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典中に、司会者は次々とゲストを＿＿。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: パーティーで主催者が全員に＿＿よう指示した。",
+    "choices": ["呼ぶ", "走る", "並ぶ"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は試合前に監督に＿＿よう頼んだ。",
+    "choices": ["呼ぶ", "走る", "説明する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 映画のセットでスタッフが役者を＿＿。",
+    "choices": ["呼ぶ", "走る", "動かす"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女はお店で常連客を＿＿ため、笑顔で迎えた。",
+    "choices": ["呼ぶ", "走る", "案内する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は遅刻しそうな時、すぐに友人を＿＿。",
+    "choices": ["呼ぶ", "走る", "待つ"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典前に、スタッフが全員を＿＿よう集まった。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 学園祭で生徒たちが先生を＿＿ために集まった。",
+    "choices": ["呼ぶ", "走る", "期待する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は夜遅く、急ぎの用事で家族を＿＿。",
+    "choices": ["呼ぶ", "走る", "呼び寄せる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: パーティーの準備で、係員が全員を＿＿よう指示した。",
+    "choices": ["呼ぶ", "走る", "集める"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は大事な会議の前に、同僚を＿＿ために部屋に呼んだ。",
+    "choices": ["呼ぶ", "走る", "集まる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 友達との再会で、彼は笑顔で相手を＿＿。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は緊急事態に備え、常に連絡先を＿＿準備している。",
+    "choices": ["呼ぶ", "走る", "確認する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で司会者が大きな声でゲストを＿＿。",
+    "choices": ["呼ぶ", "走る", "案内する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: クラブの集まりで、リーダーが新メンバーを＿＿。",
+    "choices": ["呼ぶ", "走る", "紹介する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は旅行前に、家族全員を＿＿よう連絡した。",
+    "choices": ["呼ぶ", "走る", "集まる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は遠足の日に生徒を＿＿ため、朝早く学校に呼び集めた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典前、係員が一斉に来場者を＿＿よう指示した。",
+    "choices": ["呼ぶ", "走る", "並ぶ"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は急な用事で、すぐに知人を＿＿。",
+    "choices": ["呼ぶ", "走る", "訪ねる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 友人との約束のため、彼女は電話で相手を＿＿よう促した。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は会社の会議で、部下を＿＿順に発表させた。",
+    "choices": ["呼ぶ", "走る", "指名する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 学校行事で、先生がクラスごとに代表を＿＿。",
+    "choices": ["呼ぶ", "走る", "選ぶ"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女はイベントで、司会者に次々と名前を＿＿。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典終了後、全員を＿＿ために広場に集めた。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: パーティーで、彼は大きな声で友人たちを＿＿。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女はイベント前に、スタッフを＿＿よう確認した。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は会議の開始を知らせるため、全員に＿＿よう連絡した。",
+    "choices": ["呼ぶ", "走る", "通知する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で司会者が合図を出し、ゲストを＿＿よう促した。",
+    "choices": ["呼ぶ", "走る", "案内する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は試合前にチーム全員を＿＿ため、集まらせた。",
+    "choices": ["呼ぶ", "走る", "呼集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 学校で、先生が休み時間に生徒を＿＿声で呼んだ。",
+    "choices": ["呼ぶ", "走る", "呼吸する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は友人を＿＿ため、わざわざ遠くまで出向いた。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で、司会者が来場者を＿＿よう元気に声をかけた。",
+    "choices": ["呼ぶ", "走る", "導く"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は会議中に、重要な発表者を＿＿ため手を挙げさせた。",
+    "choices": ["呼ぶ", "走る", "指名する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女はパーティーで、遠くにいる友人を＿＿と決めた。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は授業開始前に、生徒全員を＿＿合図を出した。",
+    "choices": ["呼ぶ", "走る", "注意する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は部屋に入る前に、必ず家族を＿＿よう声をかける。",
+    "choices": ["呼ぶ", "走る", "確認する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 友達との再会で、彼は笑顔で相手を＿＿声を上げた。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典の直前、係員が全員を＿＿ため大声で呼びかけた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は朝の通勤前に、同僚を＿＿ように促した。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は急な用事で、すぐに友人を＿＿ため電話した。",
+    "choices": ["呼ぶ", "走る", "知らせる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: パーティーで、彼女は皆を＿＿ために大きな声で呼んだ。",
+    "choices": ["呼ぶ", "走る", "起こす"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼はイベントで、司会者として参加者を＿＿役割を担った。",
+    "choices": ["呼ぶ", "走る", "任命する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 学園祭で、先生が生徒を＿＿ため集合場所を知らせた。",
+    "choices": ["呼ぶ", "走る", "案内する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベントの成功を願って参加者を＿＿よう呼びかけた。",
+    "choices": ["呼ぶ", "走る", "激励する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、会議で重要な発表者を＿＿ために名前を呼んだ。",
+    "choices": ["呼ぶ", "走る", "指名する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典の準備が整い、スタッフが全員を＿＿よう最後の確認をした。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女はサプライズパーティーで、秘密裏に友人を＿＿計画を立てた。",
+    "choices": ["呼ぶ", "走る", "招待する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は大会前に、選手たちを＿＿ために全員に声をかけた。",
+    "choices": ["呼ぶ", "走る", "激励する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業開始前に生徒に出席を＿＿よう促した。",
+    "choices": ["呼ぶ", "走る", "確認する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、緊急時にすぐ連絡を取るため家族を＿＿リストを作った。",
+    "choices": ["呼ぶ", "走る", "整理する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント開催前に重要なメンバーを＿＿よう招集した。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、友人との再会のために遠くまで＿＿決心した。",
+    "choices": ["呼ぶ", "走る", "訪ねる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で、司会者が一斉に名前を＿＿よう大きな声で呼んだ。",
+    "choices": ["呼ぶ", "走る", "読み上げる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、重要な知らせを伝えるためにすぐに友人を＿＿。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、校門前で生徒を＿＿合図を出して呼んだ。",
+    "choices": ["呼ぶ", "走る", "呼びかける"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、会議の開始前に、全員に注意を＿＿よう呼びかけた。",
+    "choices": ["呼ぶ", "走る", "促す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、サプライズのために友人を＿＿よう密かに計画した。",
+    "choices": ["呼ぶ", "走る", "誘う"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な用事で友人を＿＿ため、すぐ電話した。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、放課後に生徒を＿＿ために校内に呼び集めた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で、司会者が一人ひとりを＿＿よう丁寧に名前を呼んだ。",
+    "choices": ["呼ぶ", "走る", "挨拶する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、重要な発表の直前に、スタッフを＿＿ために声をかけた。",
+    "choices": ["呼ぶ", "走る", "準備する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、サプライズ企画のために友人を＿＿計画を練った。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典前、全員を＿＿よう係員が大声で呼びかけた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント開始前に必ず連絡を＿＿習慣がある。",
+    "choices": ["呼ぶ", "走る", "確認する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、特別な日のために大勢の友人を＿＿計画を立てた。",
+    "choices": ["呼ぶ", "走る", "招待する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント中に急遽必要となった人を＿＿ようスタッフに指示した。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、クラスの代表を＿＿ために名前を呼び始めた。",
+    "choices": ["呼ぶ", "走る", "選ぶ"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、試合前にチームを鼓舞するために全員を＿＿。",
+    "choices": ["呼ぶ", "走る", "激励する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 友人との待ち合わせの際、彼は相手を＿＿ために何度も電話した。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベントの開始を知らせるために司会者に全員を＿＿よう依頼した。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、忘れ物を取りに行く前に家族を＿＿よう確認した。",
+    "choices": ["呼ぶ", "走る", "探す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で、司会者が出席者を＿＿よう大きな声で呼びかけた。",
+    "choices": ["呼ぶ", "走る", "呼びかける"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な用事で友人を＿＿ために携帯電話を手にした。",
+    "choices": ["呼ぶ", "走る", "探す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベントの最中に突然全員を＿＿ためにマイクを握った。",
+    "choices": ["呼ぶ", "走る", "呼びかける"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、集会前に一斉に参加者を＿＿ように声をかけた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、再会を喜んで友人を＿＿ため、笑顔で駆け寄った。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、仕事の始まりに部下を＿＿ためにオフィスに呼び集めた。",
+    "choices": ["呼ぶ", "走る", "指示する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典中、司会者は一人ずつ名前を＿＿ことで進行を円滑にした。",
+    "choices": ["呼ぶ", "走る", "呼び上げる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、サプライズ企画で友人を＿＿計画を秘密に進めた。",
+    "choices": ["呼ぶ", "走る", "招待する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、休日に家族を＿＿ために事前に連絡を入れた。",
+    "choices": ["呼ぶ", "走る", "訪ねる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、学級会の前に生徒を＿＿ため玄関で待たせた。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で、司会者が出席者に向かって名前を＿＿よう呼びかけた。",
+    "choices": ["呼ぶ", "走る", "呼び上げる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント開始前に全員を＿＿ため大声で呼び集めた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、パーティーの開始を知らせるために友人を＿＿よう準備した。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、緊急の知らせを伝えるために、すぐに親しい人を＿＿決意した。",
+    "choices": ["呼ぶ", "走る", "探す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 学校で、先生が授業開始前に生徒を＿＿ように号令をかけた。",
+    "choices": ["呼ぶ", "走る", "呼びかける"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、サークル活動で新入生を＿＿ために歓迎の言葉を用意した。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、忘年会の前に全員を＿＿ように事前連絡をした。",
+    "choices": ["呼ぶ", "走る", "集める"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、会議の直前に部下を＿＿ためオフィスに呼び出した。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で、司会者が落ち着いた声で一人ひとりを＿＿よう呼びかけた。",
+    "choices": ["呼ぶ", "走る", "呼び上げる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、遠くにいる友人を＿＿ために時間をかけて連絡した。",
+    "choices": ["呼ぶ", "走る", "探す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント開催前に重要なメンバーを＿＿ため、リストを確認した。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、放課後に全生徒を＿＿よう玄関先に呼び集めた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で、司会者が参加者一人ひとりを＿＿ことで進行をスムーズにした。",
+    "choices": ["呼ぶ", "走る", "呼び上げる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な予定変更で友人を＿＿ため、すぐに携帯を取り出した。",
+    "choices": ["呼ぶ", "走る", "確認する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、会場で友人を＿＿よう、目を輝かせて待っていた。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、緊急の知らせを伝えるため、すぐに親しい人を＿＿決断した。",
+    "choices": ["呼ぶ", "走る", "探す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、学級委員を＿＿ように名前を呼び始めた。",
+    "choices": ["呼ぶ", "走る", "指名する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、パーティー開始前に全員を＿＿よう、笑顔で玄関先に立っていた。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント前に重要な連絡のため、スタッフを＿＿よう速やかに指示した。",
+    "choices": ["呼ぶ", "走る", "通知する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、サークル活動で新入生を＿＿ため、事前に声をかけた。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、夜遅くまでの用事のため、急いで家族を＿＿決断した。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で、司会者が最後に全員を＿＿よう大きな声で締めくくった。",
+    "choices": ["呼ぶ", "走る", "呼びかける"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント中に突然の変更を伝えるため、すぐに関係者を＿＿決断した。",
+    "choices": ["呼ぶ", "走る", "通知する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、サプライズパーティーで全員を＿＿ように密かに計画を進めた。",
+    "choices": ["呼ぶ", "走る", "招待する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急なトラブル発生時に、すぐに仲間を＿＿ため体制を整えた。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業前に出席確認のため生徒を＿＿よう、名を呼び上げた。",
+    "choices": ["呼ぶ", "走る", "確認する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、夜の急な外出のため、すぐに友人を＿＿決断した。",
+    "choices": ["呼ぶ", "走る", "迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典の始まる前、係員が全員を＿＿ように大声で呼びかけた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント準備でスタッフを＿＿ために事前に連絡を取った。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、重要な会議前に部下を＿＿よう、集合を促した。",
+    "choices": ["呼ぶ", "走る", "呼び集める"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典の締めくくりで、司会者が全員を＿＿ように優しく呼んだ。",
+    "choices": ["呼ぶ", "走る", "呼びかける"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、サプライズのために集まった友人を＿＿決意を固めた。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、会社の急なミーティングで部下を＿＿よう急いで連絡した。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント開始前にスタッフを＿＿よう最後の確認を行った。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、再会のために友人を＿＿よう、事前に何度も確認した。",
+    "choices": ["呼ぶ", "走る", "招待する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業開始直前に生徒を＿＿よう玄関で待たせた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント前に関係者を＿＿よう最終確認の連絡をした。",
+    "choices": ["呼ぶ", "走る", "通知する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、サプライズの準備のために友人を＿＿よう、密かに計画を練った。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な変更で全員を＿＿ためにすぐ指示を出した。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、遠足の前に生徒を＿＿よう玄関で声をかけた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント前に重要な人々を＿＿ため、事前にリストを確認した。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、パーティーの開始を知らせるために友人を＿＿よう玄関に迎えた。",
+    "choices": ["呼ぶ", "走る", "出迎える"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、仕事の始まりに部下を＿＿ため、朝早くオフィスに呼び集めた。",
+    "choices": ["呼ぶ", "走る", "出社させる"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベントの開始前に全員を＿＿よう大声で呼びかけた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な連絡が必要な時、すぐに友人を＿＿決心した。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 式典で、司会者が全員を＿＿ように最後の号令をかけた。",
+    "choices": ["呼ぶ", "走る", "呼びかける"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、サプライズパーティーで全員を＿＿ように、内緒で準備を進めた。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、重要な会議の前に、必ず全員を＿＿ように手配した。",
+    "choices": ["呼ぶ", "走る", "集める"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業前に生徒全員を＿＿ように玄関で待たせた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント開始前にスタッフを＿＿よう、何度も確認の連絡をした。",
+    "choices": ["呼ぶ", "走る", "呼び集める"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、サプライズのために友人を＿＿決意を固め、計画を進めた。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な用事で全員を＿＿よう、電話を次々とかけた。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、休み時間に生徒全員を＿＿ために、玄関先で大声で呼んだ。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、朝の始業前に部下を＿＿ため、必ず集合するよう指示した。",
+    "choices": ["呼ぶ", "走る", "呼び集める"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベントの準備で全員を＿＿ように最後の確認を入れた。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、緊急の知らせのためにすぐに友人を＿＿決断し、連絡を取った。",
+    "choices": ["呼ぶ", "走る", "探す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、急な変更で全員を＿＿ように、早めに集合を呼びかけた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、サプライズのために友人を＿＿計画を密かに進めた。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業開始前に必ず生徒を＿＿よう玄関で待たせる。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベントの始まる前にスタッフを＿＿よう、何度も確認の電話をした。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、緊急事態に備えて友人を＿＿決意を固め、常に連絡が取れるようにした。",
+    "choices": ["呼ぶ", "走る", "準備する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、会議の開始直前に全員を＿＿よう、玄関先で待たせた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント前に大切な人々を＿＿ため、事前に何度も確認した。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、緊急時に備えてすぐに連絡が取れるよう、家族を＿＿決意してリストを作った。",
+    "choices": ["呼ぶ", "走る", "整理する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業開始前に生徒全員を＿＿よう玄関で大声で呼び集めた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント中に急に必要な人を＿＿ため、すぐに電話を回した。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、会議前に重要な担当者を＿＿ように、先んじて連絡した。",
+    "choices": ["呼ぶ", "走る", "指定する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、パーティー前に全員を＿＿ように、事前にリストを確認した。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベントの直前に関係者を＿＿よう、大声で号令をかけた。",
+    "choices": ["呼ぶ", "走る", "呼びかける"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、緊急時にすぐ対応できるよう、家族を＿＿決意し、連絡先を再確認した。",
+    "choices": ["呼ぶ", "走る", "整理する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、クラスのまとめのために生徒を＿＿ように最後の号令を出した。",
+    "choices": ["呼ぶ", "走る", "呼び集める"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベントの成功を祈って全員を＿＿ように、心を込めて呼びかけた。",
+    "choices": ["呼ぶ", "走る", "激励する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、会議中に急遽必要となった連絡先を＿＿決意し、すぐに電話をかけた。",
+    "choices": ["呼ぶ", "走る", "確認する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、休み時間に生徒全員を＿＿よう玄関で大声で呼んだ。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な予定変更のために、すぐに同僚を＿＿よう連絡を取った。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント準備で関係者全員を＿＿よう、事前にリストを確認した。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、朝の始業前に部下を＿＿ために玄関で待たせた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント前に重要な連絡のため、全員を＿＿よう迅速に指示した。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、サプライズのために全員を＿＿よう、事前に何度も確認の電話をした。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、放課後に生徒全員を＿＿よう玄関で大声で呼び集めた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント中に急な変更で全員を＿＿よう、即座に連絡を回した。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、サプライズパーティーで全員を＿＿よう、密かに計画を練り上げた。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント前に関係者を＿＿ため、全員に確認の電話をかけた。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、会議の前に重要なメンバーを＿＿よう、事前にリストアップした。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、朝の始業前に部下を＿＿ために玄関で待たせた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、急な変更に対応するため、すぐに関係者を＿＿よう連絡を取った。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント直前に全員を＿＿よう、玄関先で声をかけ続けた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、重要な会議のために、全員を＿＿ように事前に連絡リストを確認した。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、会議前に部下を＿＿よう、玄関で待たせる習慣がある。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント開始前にスタッフを＿＿よう、必ず連絡を確認する。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な予定変更に対応するため、すぐに友人を＿＿決断し、連絡を始めた。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業前に生徒全員を＿＿よう、玄関で大声で呼び出した。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント直前にスタッフを＿＿よう、必ず確認の連絡をする習慣がある。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、会議前に重要なメンバーを＿＿よう、事前に全員に連絡を取った。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な連絡が必要な時、すぐに友人を＿＿決断し、電話をかけ始めた。",
+    "choices": ["呼ぶ", "走る", "連絡する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、放課後に生徒全員を＿＿よう玄関で待たせる習慣を続けた。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント中に急な変更で全員を＿＿よう、すぐに連絡網を回した。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、サプライズパーティーで全員を＿＿よう、事前に何度も確認した。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、会議前に部下を＿＿よう、玄関で待たせることを習慣にしている。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント開始前に全員を＿＿よう、何度も確認の連絡を取った。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な用事で全員を＿＿よう、即座に連絡を回す習慣がある。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、朝の始業前に必ず生徒全員を＿＿よう玄関で大声で呼び集める。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント前にスタッフを＿＿よう、必ず事前に連絡を入れる。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、急な変更に備えて全員を＿＿よう、常に連絡網を確認している。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、会議の前に部下を＿＿よう、玄関で待たせることにしている。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント直前に全員を＿＿よう、必ず確認の連絡を済ませる。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、緊急時に備えて家族を＿＿よう、常に連絡先を手元に置いている。",
+    "choices": ["呼ぶ", "走る", "整理する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業前に生徒全員を＿＿よう、玄関で大声で呼びかける習慣がある。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント中に急な変更で全員を＿＿よう、すぐに連絡網を起動する。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、会議前に重要なメンバーを＿＿よう、事前に必ず確認の連絡を入れる。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、朝の始業前に部下を＿＿よう、玄関で待たせることを日課にしている。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベントの開始前に全員を＿＿よう、必ず事前に確認を入れる。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な用事で全員を＿＿よう、即座に連絡体制を整える。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業前に生徒全員を＿＿よう、玄関で大声で呼び集める習慣を守っている。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント前にスタッフを＿＿よう、必ず事前に連絡を確認する。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、急な変更に対応するため、全員を＿＿よう、常に連絡体制を整えている。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、朝の始業前に部下を＿＿よう、玄関で待たせることを欠かさない。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント直前に全員を＿＿よう、必ず最終確認の連絡を入れる。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な用事で全員を＿＿よう、すぐに連絡網を起動する習慣がある。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、会議前に重要なメンバーを＿＿よう、事前に必ず連絡を済ませる。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、朝の始業前に部下を＿＿よう玄関で待たせることを日課としている。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント前にスタッフを＿＿よう、必ず事前に連絡確認をする。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な用事で全員を＿＿よう、即座に連絡体制を整えることを心がけている。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業前に生徒全員を＿＿よう、玄関で大声で呼びかけることを忘れない。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント前にスタッフを＿＿よう、必ず連絡体制を確認する習慣がある。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、急な変更に備えて全員を＿＿よう、事前に連絡を取り合うことを重視している。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、朝の始業前に部下を＿＿よう玄関で待たせることを欠かさず行っている。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント直前に全員を＿＿よう、必ず最終確認の連絡を取る。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な予定変更に対応するため、すぐに全員を＿＿よう、連絡体制を即座に整える。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業開始前に生徒全員を＿＿よう、玄関で大声で呼び集めるのを忘れない。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント中に急な変更で全員を＿＿よう、すぐに連絡網を起動することを徹底している。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、会議前に重要なメンバーを＿＿よう、事前に必ず連絡を済ませるようにしている。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、朝の始業前に必ず部下を＿＿よう玄関で待たせることを習慣としている。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント直前に全員を＿＿よう、必ず最終確認の連絡を取るようにしている。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な用事で全員を＿＿よう、即座に連絡体制を整えることを日課としている。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業前に生徒全員を＿＿よう、玄関で大声で呼び集めることをいつも心がけている。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント前にスタッフを＿＿よう、必ず事前に確認を入れることを欠かさない。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、急な変更に備えて全員を＿＿よう、事前に連絡を取り合うことを大切にしている。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、朝の始業前に部下を＿＿よう玄関で待たせることを毎日のルーチンとしている。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント直前に全員を＿＿よう、必ず最終確認の連絡を行うことを心がけている。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な用事で全員を＿＿よう、すぐに連絡網を起動することを常に意識している。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業開始前に生徒全員を＿＿よう、玄関で大声で呼び集めることを忘れずに行っている。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント中に急な変更で全員を＿＿よう、すぐに連絡網を確認することを習慣としている。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、会議前に重要なメンバーを＿＿よう、事前に必ず連絡を済ませることを徹底している。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、朝の始業前に部下を＿＿よう玄関で待たせることを欠かさず行う。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、イベント直前に全員を＿＿よう、必ず最終確認の連絡をすることを習慣にしている。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、急な用事で全員を＿＿よう、即座に連絡網を起動することを日常的に行っている。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 先生は、授業前に生徒全員を＿＿よう、玄関で大声で呼び集めることを必ず実行している。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、イベント前にスタッフを＿＿よう、必ず事前に確認の連絡を入れることを徹底している。",
+    "choices": ["呼ぶ", "走る", "呼び出す"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼女は、急な変更に備えて全員を＿＿よう、事前に連絡を取り合うことを非常に重要視している。",
+    "choices": ["呼ぶ", "走る", "招集する"],
+    "answer": "呼ぶ",
+    "kanji": "呼ぶ"
+  },
+  {
+    "question": "Fill in the blank: 彼は、朝の始業前に部下を＿＿よう玄関で待たせることを毎日欠かさず行っている。",
+    "choices": ["呼ぶ", "走る", "集合する"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 子供たちは公園で＿＿。",
+    "choices": ["呼ぶ", "走る", "見る"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 彼は毎朝駅まで＿＿。",
+    "choices": ["呼ぶ", "走る", "歩く"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 競技場で選手たちが＿＿。",
+    "choices": ["呼ぶ", "走る", "跳ぶ"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 彼女は風を感じながら＿＿。",
+    "choices": ["呼ぶ", "走る", "歌う"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 犬は庭で＿＿。",
+    "choices": ["呼ぶ", "走る", "遊ぶ"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 学生は体育の授業で＿＿。",
+    "choices": ["呼ぶ", "走る", "踊る"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 彼は試合に向かって＿＿。",
+    "choices": ["呼ぶ", "走る", "立つ"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 町中で人々が＿＿。",
+    "choices": ["呼ぶ", "走る", "歩く"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 遠足で子供たちが＿＿。",
+    "choices": ["呼ぶ", "走る", "遊ぶ"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 彼は公園で元気に＿＿。",
+    "choices": ["呼ぶ", "走る", "笑う"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: お祭りの後、皆が＿＿。",
+    "choices": ["呼ぶ", "走る", "踊る"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 朝、彼女は駅まで＿＿。",
+    "choices": ["呼ぶ", "走る", "歩く"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 体育館で生徒が＿＿。",
+    "choices": ["呼ぶ", "走る", "座る"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 競争中、彼は全力で＿＿。",
+    "choices": ["呼ぶ", "走る", "跳ぶ"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 自然の中で彼らは＿＿。",
+    "choices": ["呼ぶ", "走る", "遊ぶ"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 子供たちは校庭を＿＿。",
+    "choices": ["呼ぶ", "走る", "遊ぶ"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 彼は風を切って＿＿。",
+    "choices": ["呼ぶ", "走る", "笑う"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 運動会で生徒が＿＿。",
+    "choices": ["呼ぶ", "走る", "応援する"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: トレーニングで彼は＿＿。",
+    "choices": ["呼ぶ", "走る", "休む"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 彼女は朝のジョギングで＿＿。",
+    "choices": ["呼ぶ", "走る", "歩く"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 友達と一緒に＿＿。",
+    "choices": ["呼ぶ", "走る", "話す"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 遠くの駅まで＿＿。",
+    "choices": ["呼ぶ", "走る", "歩く"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 彼は急いで＿＿。",
+    "choices": ["呼ぶ", "走る", "歩く"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 競技で選手が＿＿。",
+    "choices": ["呼ぶ", "走る", "跳ぶ"],
+    "answer": "走る",
+    "kanji": "走る"
+  },
+  {
+    "question": "Fill in the blank: 市場まで＿＿。",
+    "choices": ["呼ぶ", "走る", "歩く"],
+    "answer": "走る",
+    "kanji": "走る"
+  }
+]
