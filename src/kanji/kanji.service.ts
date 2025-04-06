@@ -13,6 +13,7 @@ export class KanjiService {
                 meaning: dto.meaning,
                 kana: dto.kana,
                 kanjiPoint: dto.kanjiPoint,
+                jlptLevel: dto.jlptLevel,
             },
         });
 
@@ -33,6 +34,12 @@ export class KanjiService {
             include: {
                 exampleSentences: true,
             },
+        });
+    }
+    async getByKanjiString(kanji: string) {
+        return this.prisma.kanji.findUnique({
+            where: { kanji },
+            include: { exampleSentences: true },
         });
     }
 

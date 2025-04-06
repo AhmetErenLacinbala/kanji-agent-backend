@@ -3,6 +3,7 @@ export class CreateKanjiDto {
     meaning: string;
     kana: string[];
     kanjiPoint: number;
+    jlptLevel: number;
     exampleSentence: {
         sentence: string;
         meaning: string;

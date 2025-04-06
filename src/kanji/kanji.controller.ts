@@ -12,6 +12,7 @@ export class KanjiController {
     }
     @Post()
     create(@Body() dto: CreateKanjiDto) {
+        console.log("dto", dto);
         return this.kanjiService.createKanji(dto);
     }
 
@@ -24,5 +25,8 @@ export class KanjiController {
     getOne(@Param('id') id: string) {
         return this.kanjiService.getKanjiById(id);
     }
-
+    @Get('by/kanji/:kanji')
+    getByKanji(@Param('kanji') kanji: string) {
+        return this.kanjiService.getByKanjiString(kanji);
+    }
 }

@@ -15,10 +15,11 @@ datasource db {
 
 model Kanji {
   id              String     @id @default(auto()) @map("_id") @db.ObjectId
-  kanji           String
+  kanji           String @unique
   meaning         String
   kana            String[]
   kanjiPoint      Int
+  jlptLevel       Int
   exampleSentences Sentence[] @relation("KanjiSentences") // Relation name
   isDeleted       Boolean?   @default(false)
   deletedAt       DateTime?
