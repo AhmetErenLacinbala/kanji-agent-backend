@@ -28,11 +28,13 @@ model Kanji {
 }
 
 model Sentence {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  sentence  String
-  meaning   String
-  kana      String
-  counter   Int      @default(0)
-  kanjiId   String   @db.ObjectId
-  kanji     Kanji    @relation(fields: [kanjiId], references: [id], name: "KanjiSentences")
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  sentence       String
+  meaning        String
+  kana           String
+  counter        Int      @default(0)
+  usedKanjiForm  String? 
+  kanjiId        String   @db.ObjectId
+  kanji          Kanji    @relation("KanjiSentences", fields: [kanjiId], references: [id])
+  createdAt      DateTime @default(now())
 }
