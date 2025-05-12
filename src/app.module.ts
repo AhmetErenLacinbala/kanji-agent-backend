@@ -6,10 +6,15 @@ import { KanjiModule } from './kanji/kanji.module';
 import { PrismaService } from './prisma/prisma.service';
 import { SentenceModule } from './sentence/sentence.module';
 import { SentenceController } from './sentence/sentence.controller';
+import { AuthModule } from './auth/auth.module';
+import { AuthController } from './auth/auth.controller';
+import { AuthService } from './auth/auth.service';
+
+
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), KanjiModule, SentenceModule],
-  controllers: [AppController, SentenceController],
-  providers: [AppService, PrismaService],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), KanjiModule, SentenceModule, AuthModule],
+  controllers: [AppController, SentenceController, AuthController],
+  providers: [AppService, PrismaService, AuthService],
 })
 export class AppModule { }
