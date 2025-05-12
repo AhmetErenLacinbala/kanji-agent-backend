@@ -1,32 +1,34 @@
-
-//brew services start mongodb-community@7.0
-//mongod --replSet rs0 --dbpath /usr/local/var/mongodb
+// src/main.ts
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
+import { config as dotenvConfig } from 'dotenv'
+
+// 👇 Load env file dynamically based on NODE_ENV
+dotenvConfig({ path: `.env.${process.env.NODE_ENV || 'dev'}` })
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
 
-  // ✅ Enable CORS for Vite frontend
   app.enableCors({
     origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   })
 
-  // ✅ Swagger Configuration
+  // Swagger setup
   const config = new DocumentBuilder()
     .setTitle('Kanji Agent API')
     .setDescription('API documentation for your Japanese learning backend')
     .setVersion('1.0')
-    .addBearerAuth() // Optional: only if you use JWT
+    .addBearerAuth()
     .build()
 
   const document = SwaggerModule.createDocument(app, config)
   SwaggerModule.setup('api', app, document)
 
-  // ✅ Start server
-  await app.listen(process.env.PORT ?? 3000)
+  const port = process.env.PORT || 3000
+  await app.listen(port)
+  console.log(`🚀 App running on http://localhost:${port}`)
 }
 bootstrap()

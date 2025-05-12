@@ -13,7 +13,7 @@ import { AuthService } from './auth/auth.service';
 
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), KanjiModule, SentenceModule, AuthModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true, envFilePath: `.env.${process.env.NODE_ENV || 'dev'}`, }), KanjiModule, SentenceModule, AuthModule],
   controllers: [AppController, SentenceController, AuthController],
   providers: [AppService, PrismaService, AuthService],
 })
