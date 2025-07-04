@@ -9,11 +9,12 @@ import { SentenceController } from './sentence/sentence.controller';
 import { AuthModule } from './auth/auth.module';
 import { AuthController } from './auth/auth.controller';
 import { AuthService } from './auth/auth.service';
+import { GeminiModule } from './gemini/gemini.module';
 
 
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true, envFilePath: `.env.${process.env.NODE_ENV || 'dev'}`, }), KanjiModule, SentenceModule, AuthModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true, envFilePath: `.env.${process.env.NODE_ENV || 'dev'}`, }), KanjiModule, SentenceModule, AuthModule, GeminiModule],
   controllers: [AppController, SentenceController, AuthController],
   providers: [AppService, PrismaService, AuthService],
 })

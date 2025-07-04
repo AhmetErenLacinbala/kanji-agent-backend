@@ -19,6 +19,15 @@ export class CreateKanjiDto {
 
     @ApiProperty({ example: 5, description: 'JLPT level (1 to 5)' })
     jlptLevel: number
+
+    @ApiProperty({
+        type: [String],
+        example: ['approved_word1', 'approved_word2'],
+        description: 'Whitelist of approved words/terms',
+        required: false
+    })
+    whitelist?: string[]
+
     exampleSentence: {
         sentence: string;
         meaning: string;

@@ -14,6 +14,7 @@ export class KanjiService {
                 kana: dto.kana,
                 kanjiPoint: dto.kanjiPoint,
                 jlptLevel: dto.jlptLevel,
+                whitelist: dto.whitelist || [],
             },
         });
 
@@ -37,7 +38,7 @@ export class KanjiService {
         });
     }
     async getByKanjiString(kanji: string) {
-        return this.prisma.kanji.findUnique({
+        return this.prisma.kanji.findMany({
             where: { kanji },
             include: { exampleSentences: true },
         });

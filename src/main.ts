@@ -32,5 +32,6 @@ async function bootstrap() {
   console.log(`🚀 App running on http://localhost:${port}`)
   console.log('NODE_ENV:', process.env.NODE_ENV);
   console.log('DB:', process.env.DATABASE_URL?.slice(0, 50));
+  console.log('GEMINI_API_KEY:', process.env.GEMINI_API_KEY?.slice(0, 50));
 }
 bootstrap()

@@ -58,3 +58,7 @@ package-lock.json
 .env.dev
 .env.prod
 .env
+kanji-generation-progress.json
+jlpt_vocab.csv
+env.example
+env.example
