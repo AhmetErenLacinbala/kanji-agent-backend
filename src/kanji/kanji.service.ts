@@ -14,7 +14,6 @@ export class KanjiService {
                 kana: dto.kana,
                 kanjiPoint: dto.kanjiPoint,
                 jlptLevel: dto.jlptLevel,
-                whitelist: dto.whitelist || [],
             },
         });
 
@@ -50,8 +49,10 @@ export class KanjiService {
             include: {
                 exampleSentences: {
                     where: {
-                        whitelist: {
-                            isEmpty: false
+                        NOT: {
+                            whitelist: {
+                                equals: []
+                            }
                         }
                     }
                 }
