@@ -44,6 +44,21 @@ export class KanjiService {
         });
     }
 
+    async getKanjiByJlptLevel(jlptLevel: number) {
+        return this.prisma.kanji.findMany({
+            where: { jlptLevel },
+            include: {
+                exampleSentences: {
+                    where: {
+                        whitelist: {
+                            isEmpty: false
+                        }
+                    }
+                }
+            },
+        });
+    }
+
     getTest(query: string) {
         return query;
     }

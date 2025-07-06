@@ -20,7 +20,6 @@ model Kanji {
   kana            String[]
   kanjiPoint      Int
   jlptLevel       Int
-  whitelist       String[]   @default([])
   exampleSentences Sentence[] @relation("KanjiSentences") // Relation name
   isDeleted       Boolean?   @default(false)
   deletedAt       DateTime?
@@ -35,6 +34,7 @@ model Sentence {
   kana           String
   counter        Int      @default(0)
   usedKanjiForm  String? 
+  whitelist      String[] @default([])
   kanjiId        String   @db.ObjectId
   kanji          Kanji    @relation("KanjiSentences", fields: [kanjiId], references: [id])
   createdAt      DateTime @default(now())

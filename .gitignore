@@ -62,3 +62,9 @@ kanji-generation-progress.json
 jlpt_vocab.csv
 env.example
 env.example
+batch-results
+batch-files
+kanji-agent.Kanji.json
+src/scripts
+src/openai
+src/gemini

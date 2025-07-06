@@ -11,4 +11,6 @@ export class CreateSentenceDto {
     usedKanjiForm?: string;
     @ApiProperty()
     kanjiId: string;
+    @ApiProperty()
+    whitelist: string[];
 }

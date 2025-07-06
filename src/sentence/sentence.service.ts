@@ -11,6 +11,7 @@ export class SentenceService {
                 sentence: dto.sentence,
                 meaning: dto.meaning,
                 kana: dto.kana,
+                whitelist: dto.whitelist,
                 usedKanjiForm: dto.usedKanjiForm,
                 kanji: {
                     connect: { id: dto.kanjiId },

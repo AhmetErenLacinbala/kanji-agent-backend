@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { GeminiService } from '../gemini/gemini.service';
+import { OpenAIService } from '../openai/openai.service';
 import { ConfigService } from '@nestjs/config';
 import { config as dotenvConfig } from 'dotenv';
 import * as fs from 'fs';
@@ -14,7 +14,7 @@ const prisma = new PrismaClient();
 // Initialize services
 const configService = new ConfigService();
 // Silent mode will be set after parsing command line args
-let geminiService: GeminiService;
+let openaiService: OpenAIService;
 
 // Progress tracking
 const PROGRESS_FILE = path.join(__dirname, '../../kanji-generation-progress.json');
@@ -207,10 +207,9 @@ async function validateAndFixWhitelist(
         const needed = 15 - validWhitelist.length;
         log(`🔄 Retry ${retryCount}: Requesting ${needed} more unique kanji...`);
 
-        const additionalKanji = await geminiService.generateWhitelistKanji(
+        const additionalKanji = await openaiService.generateKanjiWhitelist(
             targetKanji,
             targetJlptLevel,
-            [...validWhitelist, ...invalidKanji, targetKanji], // Exclude already processed
             needed + 10 // Request more extras to account for duplicates
         );
 
@@ -305,8 +304,8 @@ const shouldClear = args.includes('--clear');
 const fromId = args.includes('--from-id') ? args[args.indexOf('--from-id') + 1] : null;
 const silentMode = args.includes('--silent');
 
-// Initialize GeminiService with silent mode based on command line args
-geminiService = new GeminiService(configService, silentMode);
+// Initialize OpenAIService with silent mode based on command line args
+openaiService = new OpenAIService(configService, silentMode);
 
 // Enhanced console logging that respects silent mode
 function consoleLog(message: string): void {
@@ -467,21 +466,27 @@ async function generateKanjiContentWithTracking() {
                     continue;
                 }
 
-
-
-                // Generate content using Gemini
-                log(`🤖 Calling Gemini AI for ${kanji.kanji}...`);
-                const generatedContent = await geminiService.generateKanjiQuestionsAndWhitelist(
+                // Generate sentences using OpenAI
+                log(`🤖 Generating sentences for ${kanji.kanji}...`);
+                const generatedSentences = await openaiService.generateKanjiSentences(
                     kanji.kanji,
                     kanji.meaning,
                     kanji.kana,
                     kanji.jlptLevel
                 );
 
+                // Generate whitelist using OpenAI
+                log(`🤖 Generating whitelist for ${kanji.kanji}...`);
+                const generatedWhitelist = await openaiService.generateKanjiWhitelist(
+                    kanji.kanji,
+                    kanji.jlptLevel,
+                    15
+                );
+
                 // Validate and fix whitelist JLPT levels
                 log(`🔍 Validating whitelist JLPT levels...`);
                 const validatedWhitelist = await validateAndFixWhitelist(
-                    generatedContent.whitelist,
+                    generatedWhitelist,
                     kanji.jlptLevel,
                     kanji.kanji
                 );
@@ -491,13 +496,13 @@ async function generateKanjiContentWithTracking() {
                 await prisma.kanji.update({
                     where: { id: kanji.id },
                     data: {
-                        whitelist: { set: validatedWhitelist }
+                        whitelist: validatedWhitelist
                     }
                 });
 
                 // Create sentence records
-                log(`📖 Creating ${generatedContent.sentences.length} sentences...`);
-                for (const sentenceData of generatedContent.sentences) {
+                log(`📖 Creating ${generatedSentences.length} sentences...`);
+                for (const sentenceData of generatedSentences) {
                     await prisma.sentence.create({
                         data: {
                             sentence: sentenceData.sentence,
@@ -513,7 +518,7 @@ async function generateKanjiContentWithTracking() {
                 updateProgress(progress, kanji.id, true, undefined, kanji.kanji);
 
                 // Add a delay to avoid overwhelming the API
-                await new Promise(resolve => setTimeout(resolve, 3000));
+                await new Promise(resolve => setTimeout(resolve, 5000));
 
             } catch (error) {
                 logError(`❌ Error processing ${kanji.kanji}:`, error.message);
