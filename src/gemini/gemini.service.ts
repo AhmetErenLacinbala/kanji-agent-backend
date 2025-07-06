@@ -195,21 +195,21 @@ Analyze carefully and be strict about semantic similarity to ensure educational 
         }
     }
 
-    async generateKanjiQuestionsAndWhitelist(
+    async generateKanjiSentences(
         kanji: string,
         meaning: string,
         kanaReadings: string[],
         jlptLevel: number
-    ): Promise<{
-        whitelist: string[];
-        sentences: Array<{
-            sentence: string;
-            meaning: string;
-            kana: string;
-            usedKanjiForm: string;
-        }>;
-    }> {
-        const prompt = `You are a Japanese language expert creating educational content for a kanji learning app. I need you to generate content for the kanji "${kanji}".
+    ): Promise<Array<{
+        sentence: string;
+        meaning: string;
+        kana: string;
+        usedKanjiForm: string;
+    }>> {
+        const prompt = `You are a Japanese language expert creating educational sentences for a kanji learning app. I need you to generate UNIQUE, FRESH sentences for the kanji "${kanji}".
+
+**IMPORTANT: FORGET ALL PREVIOUS CONTENT**
+This is a completely new request. Do NOT repeat or reference any sentences, patterns, or structures from previous kanji. Each kanji should get completely unique and varied content. Start fresh!
 
 **Kanji Information:**
 - Kanji: ${kanji}
@@ -225,25 +225,13 @@ Analyze carefully and be strict about semantic similarity to ensure educational 
 - Use contexts like: studying history, reading about past events, learning in school, academic research
 - Focus on neutral, educational, learning-oriented content
 
-**Task 1 - Generate Whitelist (30 UNIQUE Japanese kanji):**
-Create a whitelist of exactly 30 UNIQUE Japanese kanji that could be used as incorrect answer choices in multiple-choice questions. These should be:
-- Japanese kanji characters (NOT English words)
-- From the same JLPT level (N${jlptLevel}) as the target kanji
-- Related to similar semantic fields but clearly different meanings
-- Common kanji that students at this level would know
-- Plausible but clearly wrong options for quiz questions
-- Single kanji characters or common kanji compounds
-- **CRITICAL: All 30 kanji must be DIFFERENT from each other - NO DUPLICATES**
-- **CRITICAL: Do NOT include the target kanji "${kanji}" in the whitelist**
-- Avoid sensitive or controversial kanji (war, weapons, violence, disasters)
-
-**Task 2 - Generate 5 Example Sentences:**
-Create 5 Japanese sentences that demonstrate the ACTUAL USAGE of this kanji in real-life contexts. Each sentence should:
+**Task - Generate 5 Example Sentences:**
+Create 5 COMPLETELY DIFFERENT Japanese sentences that demonstrate the ACTUAL USAGE of this kanji in real-life contexts. IMPORTANT: Use entirely different sentence structures, topics, and situations for each sentence. Each sentence should:
 - Be appropriate for JLPT N${jlptLevel} level learners
 - Show HOW the kanji is actually used in daily life, not just learning about it
 - Be 10-20 characters long (not too complex)
 - Have clear, simple English translations that sound natural
-- Include the romanized reading (kana) of the entire sentence
+- Include the full Japanese reading (hiragana/katakana) of the entire sentence - NO romanized text
 - Show different uses/forms of the kanji when possible
 - Be SPECIFIC enough that the kanji is clearly the correct choice in a quiz
 - Provide RICH CONTEXT so learners can understand the kanji's meaning from the sentence
@@ -252,6 +240,16 @@ Create 5 Japanese sentences that demonstrate the ACTUAL USAGE of this kanji in r
 - AVOID generic statements like "There are X" or "X is popular" without context
 - FOCUS on what the kanji actually means and how it's used in real contexts
 - Make sentences descriptive enough that someone could guess the kanji meaning from context
+
+**CRITICAL: VARY SENTENCE TYPES AND STYLES:**
+- Mix different sentence types: statements, questions, exclamations, commands
+- Mix different formality levels: casual (だ/である), polite (です/ます), informal conversation
+- Mix different contexts: work, home, shopping, travel, relationships, hobbies, etc.
+- Mix different grammar patterns: present, past, conditional, causative, passive, etc.
+- NEVER repeat the same sentence structure twice
+- Each sentence should feel completely unrelated to the others except for containing the target kanji
+
+**FORGET ALL PREVIOUS PATTERNS - CREATE FRESH CONTENT FOR THIS SPECIFIC KANJI**
 
 **IMPORTANT FOR ENGLISH TRANSLATIONS:**
 If the kanji has multiple meanings (e.g., "limit, restriction"), choose the MOST APPROPRIATE single meaning for each sentence context and use it naturally in English. Do NOT use the full meaning string literally.
@@ -270,19 +268,24 @@ CREATE SENTENCES THAT PROVIDE ENOUGH CONTEXT FOR QUIZ COMPREHENSION - learners s
 
 **Output Format (JSON only, no explanations outside JSON):**
 {
-  "whitelist": ["kanji1", "kanji2", "kanji3", ...],
   "sentences": [
     {
       "sentence": "Japanese sentence with ${kanji}",
       "meaning": "English translation",
-      "kana": "romanized reading of entire sentence",
+      "kana": "full Japanese reading in hiragana/katakana (NO romanized text)",
       "usedKanjiForm": "specific form of ${kanji} used"
     },
     ...
   ]
 }
 
-Generate exactly 5 sentences and exactly 15 UNIQUE Japanese kanji for the whitelist. Ensure all whitelist kanji are from JLPT N${jlptLevel} level and are all different from each other.`;
+Generate exactly 5 sentences that demonstrate practical usage of this kanji.
+
+**CRITICAL: The "kana" field must contain ONLY Japanese characters (hiragana/katakana). NO romanized text allowed. Examples:**
+- CORRECT: "きょうはがっこうにいきます。"
+- CORRECT: "わたしはテストをうけました。"
+- WRONG: "kyou wa gakkou ni ikimasu"
+- WRONG: "watashi wa tesuto wo ukemashita"`;
 
         try {
             const response = await this.generateText(prompt);
@@ -296,10 +299,6 @@ Generate exactly 5 sentences and exactly 15 UNIQUE Japanese kanji for the whitel
             const parsed = JSON.parse(jsonMatch[0]);
 
             // Validate response structure
-            if (!parsed.whitelist || !Array.isArray(parsed.whitelist)) {
-                throw new Error('Invalid response format: missing whitelist array');
-            }
-
             if (!parsed.sentences || !Array.isArray(parsed.sentences)) {
                 throw new Error('Invalid response format: missing sentences array');
             }
@@ -312,22 +311,15 @@ Generate exactly 5 sentences and exactly 15 UNIQUE Japanese kanji for the whitel
             }
 
             // Ensure we have the right number of items
-            if (parsed.sentences.length !== 10) {
+            if (parsed.sentences.length !== 5) {
                 if (!this.silentMode) {
-                    this.logger.warn(`Expected 10 sentences, got ${parsed.sentences.length} for kanji ${kanji}`);
+                    this.logger.warn(`Expected 5 sentences, got ${parsed.sentences.length} for kanji ${kanji}`);
                 }
             }
 
-            if (parsed.whitelist.length !== 15) {
-                if (!this.silentMode) {
-                    this.logger.warn(`Expected 15 whitelist kanji, got ${parsed.whitelist.length} for kanji ${kanji}`);
-                }
-            }
 
-            return {
-                whitelist: parsed.whitelist,
-                sentences: parsed.sentences
-            };
+
+            return parsed.sentences;
 
         } catch (error) {
             if (!this.silentMode) {
@@ -356,34 +348,119 @@ Generate exactly 5 sentences and exactly 15 UNIQUE Japanese kanji for the whitel
             const primaryMeaning = meanings[0]; // Use first meaning as primary
             const alternativeMeaning = meanings.length > 1 ? meanings[1] : primaryMeaning;
 
-            const fallbackTemplates = isSensitiveTopic ? [
-                // Historical/educational contexts for sensitive topics
-                { sentence: `${kanji}は歴史を変えました。`, meaning: `${primaryMeaning} changed history.`, kana: `${kanji} wa rekishi wo kaemashita` },
-                { sentence: `過去に${kanji}がありました。`, meaning: `There was ${primaryMeaning} in the past.`, kana: `kako ni ${kanji} ga arimashita` },
-                { sentence: `${kanji}の影響は大きかった。`, meaning: `The impact of ${primaryMeaning} was great.`, kana: `${kanji} no eikyou wa ookikatta` },
-                { sentence: `人々は${kanji}を恐れました。`, meaning: `People feared ${primaryMeaning}.`, kana: `hitobito wa ${kanji} wo osore mashita` },
-                { sentence: `${kanji}により多くの人が苦しみました。`, meaning: `Many people suffered due to ${primaryMeaning}.`, kana: `${kanji} ni yori ooku no hito ga kurushimashita` },
-                { sentence: `世界は${kanji}のない平和を望んでいます。`, meaning: `The world hopes for peace without ${primaryMeaning}.`, kana: `sekai wa ${kanji} no nai heiwa wo nozonde imasu` },
-                { sentence: `${kanji}は人類の教訓です。`, meaning: `${primaryMeaning} is a lesson for humanity.`, kana: `${kanji} wa jinrui no kyoukun desu` },
-                { sentence: `今は${kanji}について考える時です。`, meaning: `Now is the time to think about ${primaryMeaning}.`, kana: `ima wa ${kanji} ni tsuite kangaeru toki desu` },
-                { sentence: `${kanji}を防ぐ努力をしています。`, meaning: `We are making efforts to prevent ${primaryMeaning}.`, kana: `${kanji} wo fusegu doryoku wo shite imasu` },
-                { sentence: `平和のために${kanji}を学びます。`, meaning: `We learn about ${primaryMeaning} for peace.`, kana: `heiwa no tame ni ${kanji} wo manabimasu` }
-            ] : [
-                // Contextual usage templates that demonstrate actual meaning and usage
-                { sentence: `この商品は${kanji}版です。`, meaning: `This product is a ${primaryMeaning}ed edition.`, kana: `kono shouhin wa ${kanji} ban desu` },
-                { sentence: `${kanji}を使って作業します。`, meaning: `I work using ${primaryMeaning}.`, kana: `${kanji} wo tsukatte sagyou shimasu` },
-                { sentence: `${kanji}の専門家に相談しました。`, meaning: `I consulted a ${primaryMeaning} expert.`, kana: `${kanji} no senmonka ni soudan shimashita` },
-                { sentence: `最新の${kanji}技術です。`, meaning: `This is the latest ${primaryMeaning} technology.`, kana: `saishin no ${kanji} gijutsu desu` },
-                { sentence: `${kanji}の効果を実感しました。`, meaning: `I experienced the effects of ${primaryMeaning}.`, kana: `${kanji} no kouka wo jitukan shimashita` },
-                { sentence: `会社で${kanji}を管理しています。`, meaning: `I manage ${alternativeMeaning} at the company.`, kana: `kaisha de ${kanji} wo kanri shite imasu` },
-                { sentence: `${kanji}に関する法律があります。`, meaning: `There are laws regarding ${alternativeMeaning}.`, kana: `${kanji} ni kansuru houritsu ga arimasu` },
-                { sentence: `この地域は${kanji}が厳しいです。`, meaning: `This area has strict ${alternativeMeaning}.`, kana: `kono chiiki wa ${kanji} ga kibishii desu` },
-                { sentence: `${kanji}を測定する機器です。`, meaning: `This is equipment for measuring ${primaryMeaning}.`, kana: `${kanji} wo sokutei suru kiki desu` },
-                { sentence: `${kanji}の改善に取り組んでいます。`, meaning: `We are working on improving ${primaryMeaning}.`, kana: `${kanji} no kaizen ni torikunde imasu` }
-            ];
+            // Create contextually appropriate fallback templates based on meaning type
+            const createContextualSentences = (kanji: string, meaning: string) => {
+                const lowerMeaning = meaning.toLowerCase();
 
-            for (let i = 0; i < 10; i++) {
-                const template = fallbackTemplates[i];
+                // Physical objects (concrete nouns)
+                if (lowerMeaning.includes('oil') || lowerMeaning.includes('fuel') || lowerMeaning.includes('gas') ||
+                    lowerMeaning.includes('water') || lowerMeaning.includes('food') || lowerMeaning.includes('book') ||
+                    lowerMeaning.includes('car') || lowerMeaning.includes('money') || lowerMeaning.includes('tool')) {
+                    return [
+                        { sentence: `${kanji}を買いに行きました。`, meaning: `I went to buy ${primaryMeaning}.`, kana: `${kanji}をかいにいきました。` },
+                        { sentence: `${kanji}の値段が高いです。`, meaning: `The price of ${primaryMeaning} is high.`, kana: `${kanji}のねだんがたかいです。` },
+                        { sentence: `${kanji}を使います。`, meaning: `I use ${primaryMeaning}.`, kana: `${kanji}をつかいます。` },
+                        { sentence: `${kanji}がありません。`, meaning: `There is no ${primaryMeaning}.`, kana: `${kanji}がありません。` },
+                        { sentence: `${kanji}を探しています。`, meaning: `I am looking for ${primaryMeaning}.`, kana: `${kanji}をさがしています。` }
+                    ];
+                }
+                // People/relationships
+                else if (lowerMeaning.includes('friend') || lowerMeaning.includes('teacher') || lowerMeaning.includes('student') ||
+                    lowerMeaning.includes('person') || lowerMeaning.includes('child') || lowerMeaning.includes('parent')) {
+                    return [
+                        { sentence: `${kanji}に会いました。`, meaning: `I met a ${primaryMeaning}.`, kana: `${kanji}にあいました。` },
+                        { sentence: `${kanji}と話しました。`, meaning: `I talked with my ${primaryMeaning}.`, kana: `${kanji}とはなしました。` },
+                        { sentence: `${kanji}を紹介します。`, meaning: `I will introduce my ${primaryMeaning}.`, kana: `${kanji}をしょうかいします。` },
+                        { sentence: `${kanji}が来ました。`, meaning: `My ${primaryMeaning} came.`, kana: `${kanji}がきました。` },
+                        { sentence: `${kanji}は優しいです。`, meaning: `My ${primaryMeaning} is kind.`, kana: `${kanji}はやさしいです。` }
+                    ];
+                }
+                // Abstract concepts (principles, ideas, views, etc.)
+                else if (lowerMeaning.includes('principle') || lowerMeaning.includes('idea') || lowerMeaning.includes('view') ||
+                    lowerMeaning.includes('opinion') || lowerMeaning.includes('concept') || lowerMeaning.includes('theory') ||
+                    lowerMeaning.includes('rule') || lowerMeaning.includes('method') || lowerMeaning.includes('way')) {
+                    return [
+                        { sentence: `${kanji}について考えました。`, meaning: `I thought about the ${primaryMeaning}.`, kana: `${kanji}についてかんがえました。` },
+                        { sentence: `${kanji}を説明します。`, meaning: `I will explain the ${primaryMeaning}.`, kana: `${kanji}をせつめいします。` },
+                        { sentence: `${kanji}に従います。`, meaning: `I follow the ${primaryMeaning}.`, kana: `${kanji}にしたがいます。` },
+                        { sentence: `${kanji}を理解しました。`, meaning: `I understood the ${primaryMeaning}.`, kana: `${kanji}をりかいしました。` },
+                        { sentence: `${kanji}が重要です。`, meaning: `The ${primaryMeaning} is important.`, kana: `${kanji}がじゅうようです。` }
+                    ];
+                }
+                // Places/locations
+                else if (lowerMeaning.includes('place') || lowerMeaning.includes('location') || lowerMeaning.includes('school') ||
+                    lowerMeaning.includes('home') || lowerMeaning.includes('office') || lowerMeaning.includes('country') ||
+                    lowerMeaning.includes('city') || lowerMeaning.includes('area')) {
+                    return [
+                        { sentence: `${kanji}に行きました。`, meaning: `I went to the ${primaryMeaning}.`, kana: `${kanji}にいきました。` },
+                        { sentence: `${kanji}で待っています。`, meaning: `I am waiting at the ${primaryMeaning}.`, kana: `${kanji}でまっています。` },
+                        { sentence: `${kanji}から来ました。`, meaning: `I came from the ${primaryMeaning}.`, kana: `${kanji}からきました。` },
+                        { sentence: `${kanji}を見つけました。`, meaning: `I found the ${primaryMeaning}.`, kana: `${kanji}をみつけました。` },
+                        { sentence: `${kanji}は遠いです。`, meaning: `The ${primaryMeaning} is far.`, kana: `${kanji}はとおいです。` }
+                    ];
+                }
+                // Emotions/feelings/states
+                else if (lowerMeaning.includes('happy') || lowerMeaning.includes('sad') || lowerMeaning.includes('angry') ||
+                    lowerMeaning.includes('love') || lowerMeaning.includes('fear') || lowerMeaning.includes('joy') ||
+                    lowerMeaning.includes('feeling') || lowerMeaning.includes('emotion')) {
+                    return [
+                        { sentence: `${kanji}を感じます。`, meaning: `I feel ${primaryMeaning}.`, kana: `${kanji}をかんじます。` },
+                        { sentence: `${kanji}になりました。`, meaning: `I became ${primaryMeaning}.`, kana: `${kanji}になりました。` },
+                        { sentence: `${kanji}な気持ちです。`, meaning: `I have a ${primaryMeaning} feeling.`, kana: `${kanji}なきもちです。` },
+                        { sentence: `${kanji}を表現します。`, meaning: `I express ${primaryMeaning}.`, kana: `${kanji}をひょうげんします。` },
+                        { sentence: `${kanji}が伝わります。`, meaning: `The ${primaryMeaning} is conveyed.`, kana: `${kanji}がつたわります。` }
+                    ];
+                }
+                // Time/events/actions
+                else if (lowerMeaning.includes('time') || lowerMeaning.includes('event') || lowerMeaning.includes('meeting') ||
+                    lowerMeaning.includes('work') || lowerMeaning.includes('study') || lowerMeaning.includes('practice') ||
+                    lowerMeaning.includes('activity') || lowerMeaning.includes('action')) {
+                    return [
+                        { sentence: `${kanji}を始めました。`, meaning: `I started the ${primaryMeaning}.`, kana: `${kanji}をはじめました。` },
+                        { sentence: `${kanji}に参加します。`, meaning: `I will participate in the ${primaryMeaning}.`, kana: `${kanji}にさんかします。` },
+                        { sentence: `${kanji}を終えました。`, meaning: `I finished the ${primaryMeaning}.`, kana: `${kanji}をおえました。` },
+                        { sentence: `${kanji}を準備します。`, meaning: `I will prepare for the ${primaryMeaning}.`, kana: `${kanji}をじゅんびします。` },
+                        { sentence: `${kanji}が続きます。`, meaning: `The ${primaryMeaning} continues.`, kana: `${kanji}がつづきます。` }
+                    ];
+                }
+                // Death/deceased (sensitive topics)
+                else if (lowerMeaning.includes('death') || lowerMeaning.includes('dead') || lowerMeaning.includes('deceased')) {
+                    return [
+                        { sentence: `${kanji}を悼みます。`, meaning: `We mourn the ${primaryMeaning}.`, kana: `${kanji}をいたみます。` },
+                        { sentence: `${kanji}を偲びます。`, meaning: `We remember the ${primaryMeaning}.`, kana: `${kanji}をしのびます。` },
+                        { sentence: `${kanji}について聞きました。`, meaning: `I heard about the ${primaryMeaning}.`, kana: `${kanji}についてききました。` },
+                        { sentence: `${kanji}の知らせが来ました。`, meaning: `News of the ${primaryMeaning} came.`, kana: `${kanji}のしらせがきました。` },
+                        { sentence: `${kanji}を受け入れました。`, meaning: `I accepted the ${primaryMeaning}.`, kana: `${kanji}をうけいれました。` }
+                    ];
+                }
+                // Default for other concepts - safer, more universal sentences
+                else {
+                    return [
+                        { sentence: `${kanji}について話しました。`, meaning: `We talked about ${primaryMeaning}.`, kana: `${kanji}についてはなしました。` },
+                        { sentence: `${kanji}を知っています。`, meaning: `I know about ${primaryMeaning}.`, kana: `${kanji}をしっています。` },
+                        { sentence: `${kanji}が話題になりました。`, meaning: `${primaryMeaning} became a topic.`, kana: `${kanji}がわだいになりました。` },
+                        { sentence: `${kanji}に関心があります。`, meaning: `I am interested in ${primaryMeaning}.`, kana: `${kanji}にかんしんがあります。` },
+                        { sentence: `${kanji}について学びました。`, meaning: `I learned about ${primaryMeaning}.`, kana: `${kanji}についてまなびました。` }
+                    ];
+                }
+            };
+
+            const diverseTemplates = createContextualSentences(kanji, meaning);
+
+            const fallbackTemplates = isSensitiveTopic ? [
+                // Historical/educational contexts for sensitive topics with varied structures
+                { sentence: `${kanji}の歴史を学んだ。`, meaning: `I learned the history of ${primaryMeaning}.`, kana: `${kanji}のれきしをまなんだ。` },
+                { sentence: `なぜ${kanji}が起きたのか？`, meaning: `Why did ${primaryMeaning} happen?`, kana: `なぜ${kanji}がおきたのか？` },
+                { sentence: `${kanji}を忘れてはいけない。`, meaning: `We must not forget ${primaryMeaning}.`, kana: `${kanji}をわすれてはいけない。` },
+                { sentence: `平和は${kanji}より大切だ。`, meaning: `Peace is more important than ${primaryMeaning}.`, kana: `へいわは${kanji}よりたいせつだ。` },
+                { sentence: `${kanji}の犠牲者を偲ぶ。`, meaning: `We remember the victims of ${primaryMeaning}.`, kana: `${kanji}のぎせいしゃをしのぶ。` }
+            ] : diverseTemplates;
+
+            // Shuffle templates and select 5 random ones for variety
+            const shuffledTemplates = [...fallbackTemplates].sort(() => Math.random() - 0.5);
+
+            for (let i = 0; i < 5; i++) {
+                const template = shuffledTemplates[i % shuffledTemplates.length];
                 fallbackSentences.push({
                     sentence: template.sentence,
                     meaning: template.meaning,
@@ -392,10 +469,69 @@ Generate exactly 5 sentences and exactly 15 UNIQUE Japanese kanji for the whitel
                 });
             }
 
-            return {
-                whitelist: [kanji], // Fallback to the kanji itself
-                sentences: fallbackSentences
-            };
+            return fallbackSentences;
+        }
+    }
+
+    async generateKanjiWhitelist(
+        targetKanji: string,
+        jlptLevel: number,
+        requestedCount: number = 15
+    ): Promise<string[]> {
+        const prompt = `You are a Japanese language expert creating quiz content. Generate exactly ${requestedCount} UNIQUE Japanese kanji characters that could be used as incorrect answer choices for the kanji "${targetKanji}".
+
+**Target Kanji Information:**
+- Kanji: ${targetKanji}
+- JLPT Level: N${jlptLevel}
+
+**Requirements:**
+- Generate exactly ${requestedCount} UNIQUE Japanese kanji
+- All kanji must be from JLPT N${jlptLevel} level
+- Choose kanji that are semantically different from "${targetKanji}"
+- Suitable as plausible but incorrect answers in multiple choice questions
+- Use single kanji or common kanji compounds
+- **CRITICAL: All kanji must be DIFFERENT from each other - NO DUPLICATES**
+- **CRITICAL: Do NOT include the target kanji "${targetKanji}" in the list**
+- Avoid sensitive or controversial kanji (war, weapons, violence, disasters)
+
+**Output Format (JSON only):**
+{
+  "whitelist": ["kanji1", "kanji2", "kanji3", ...]
+}
+
+Generate exactly ${requestedCount} UNIQUE kanji from JLPT N${jlptLevel} level. Ensure all kanji are different from each other.`;
+
+        try {
+            const response = await this.generateText(prompt);
+
+            // Parse JSON response
+            const jsonMatch = response.match(/\{[\s\S]*\}/);
+            if (!jsonMatch) {
+                throw new Error('Could not parse JSON response from Gemini');
+            }
+
+            const parsed = JSON.parse(jsonMatch[0]) as { whitelist: unknown[] };
+
+            if (!parsed.whitelist || !Array.isArray(parsed.whitelist)) {
+                throw new Error('Invalid response format: missing whitelist array');
+            }
+
+            // Ensure all items are strings and remove duplicates
+            const stringKanji = parsed.whitelist.filter((k): k is string => typeof k === 'string');
+            const uniqueKanji = [...new Set(stringKanji)]
+                .filter((k: string) => k !== targetKanji);
+
+            if (!this.silentMode) {
+                this.logger.log(`Generated ${parsed.whitelist.length} kanji, ${uniqueKanji.length} unique after filtering`);
+            }
+
+            return uniqueKanji.slice(0, requestedCount); // Ensure exact count
+
+        } catch (error) {
+            if (!this.silentMode) {
+                this.logger.error(`Error generating whitelist kanji:`, error.message);
+            }
+            return [targetKanji]; // Fallback
         }
     }
 
@@ -403,7 +539,7 @@ Generate exactly 5 sentences and exactly 15 UNIQUE Japanese kanji for the whitel
         targetKanji: string,
         jlptLevel: number,
         excludeKanji: string[] = [],
-        requestedCount: number = 30
+        requestedCount: number = 15
     ): Promise<string[]> {
         const excludeList = excludeKanji.length > 0 ? excludeKanji.join(', ') : 'none';
 
