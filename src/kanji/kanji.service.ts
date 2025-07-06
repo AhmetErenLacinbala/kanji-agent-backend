@@ -14,6 +14,7 @@ export class KanjiService {
                 kana: dto.kana,
                 kanjiPoint: dto.kanjiPoint,
                 jlptLevel: dto.jlptLevel,
+
             },
         });
 
@@ -47,15 +48,7 @@ export class KanjiService {
         return this.prisma.kanji.findMany({
             where: { jlptLevel },
             include: {
-                exampleSentences: {
-                    where: {
-                        NOT: {
-                            whitelist: {
-                                equals: []
-                            }
-                        }
-                    }
-                }
+                exampleSentences: true
             },
         });
     }

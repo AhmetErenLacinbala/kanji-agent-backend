@@ -26,7 +26,6 @@ export class CreateKanjiDto {
         description: 'Whitelist of approved words/terms',
         required: false
     })
-    whitelist?: string[]
 
     exampleSentence: {
         sentence: string;
