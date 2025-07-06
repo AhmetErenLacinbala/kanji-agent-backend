@@ -67,4 +67,4 @@ batch-files
 kanji-agent.Kanji.json
 src/scripts
 src/gemini
-src/openai/openai.service.ts
+src/openai
