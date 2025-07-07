@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateKanjiDto } from './dto/create-kanji.dto';
+import { GetKanjiQueryDto } from './dto/get-kanji-query.dto';
 
 @Injectable()
 export class KanjiService {
@@ -51,6 +52,41 @@ export class KanjiService {
                 exampleSentences: true
             },
         });
+    }
+
+    async getKanjiWithPagination(query: GetKanjiQueryDto) {
+        const { from = 0, take = 10, jlptLevel } = query;
+
+        const whereClause = jlptLevel && jlptLevel.length > 0
+            ? { jlptLevel: { in: jlptLevel } }
+            : {};
+
+        const [kanji, total] = await Promise.all([
+            this.prisma.kanji.findMany({
+                where: whereClause,
+                skip: from,
+                take: take,
+                include: {
+                    exampleSentences: true,
+                },
+                orderBy: {
+                    createdAt: 'desc'
+                }
+            }),
+            this.prisma.kanji.count({
+                where: whereClause,
+            })
+        ]);
+
+        return {
+            data: kanji,
+            pagination: {
+                from,
+                take,
+                total,
+                hasMore: from + take < total
+            }
+        };
     }
 
     getTest(query: string) {

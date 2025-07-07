@@ -1,7 +1,8 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { KanjiService } from './kanji.service';
 import { CreateKanjiDto } from './dto/create-kanji.dto';
-import { ApiBody, ApiConsumes, ApiTags } from '@nestjs/swagger';
+import { GetKanjiQueryDto } from './dto/get-kanji-query.dto';
+import { ApiBody, ApiConsumes, ApiQuery, ApiTags } from '@nestjs/swagger';
 
 
 @ApiTags('Kanji')
@@ -25,6 +26,14 @@ export class KanjiController {
     @Get()
     getAll() {
         return this.kanjiService.getAllKanji();
+    }
+
+    @Get('paginated')
+    @ApiQuery({ name: 'from', required: false, type: Number, description: 'Starting index for pagination' })
+    @ApiQuery({ name: 'take', required: false, type: Number, description: 'Number of items to take' })
+    @ApiQuery({ name: 'jlptLevel', required: false, type: [Number], description: 'JLPT levels to filter by (can be multiple)' })
+    getKanjiPaginated(@Query() query: GetKanjiQueryDto) {
+        return this.kanjiService.getKanjiWithPagination(query);
     }
 
     @Get(':id')
