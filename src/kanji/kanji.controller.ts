@@ -32,6 +32,7 @@ export class KanjiController {
     @ApiQuery({ name: 'from', required: false, type: Number, description: 'Starting index for pagination' })
     @ApiQuery({ name: 'take', required: false, type: Number, description: 'Number of items to take' })
     @ApiQuery({ name: 'jlptLevel', required: false, type: [Number], description: 'JLPT levels to filter by (can be multiple)' })
+    @ApiQuery({ name: 'query', required: false, type: String, description: 'Search term to filter by kanji, kana, or meaning' })
     getKanjiPaginated(@Query() query: GetKanjiQueryDto) {
         return this.kanjiService.getKanjiWithPagination(query);
     }

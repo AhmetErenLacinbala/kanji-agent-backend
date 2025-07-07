@@ -55,11 +55,24 @@ export class KanjiService {
     }
 
     async getKanjiWithPagination(query: GetKanjiQueryDto) {
-        const { from = 0, take = 10, jlptLevel } = query;
+        const { from = 0, take = 10, jlptLevel, query: searchQuery } = query;
 
-        const whereClause = jlptLevel && jlptLevel.length > 0
-            ? { jlptLevel: { in: jlptLevel } }
-            : {};
+        let whereClause: any = {};
+
+        // Add JLPT level filtering
+        if (jlptLevel && jlptLevel.length > 0) {
+            whereClause.jlptLevel = { in: jlptLevel };
+        }
+
+        // Add search functionality
+        if (searchQuery && searchQuery.trim()) {
+            const searchTerm = searchQuery.trim();
+            whereClause.OR = [
+                { kanji: { contains: searchTerm, mode: 'insensitive' } },
+                { meaning: { contains: searchTerm, mode: 'insensitive' } },
+                { kana: { has: searchTerm } }
+            ];
+        }
 
         const [kanji, total] = await Promise.all([
             this.prisma.kanji.findMany({

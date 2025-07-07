@@ -1,6 +1,6 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
-import { IsOptional, IsInt, Min, IsArray } from 'class-validator';
+import { IsOptional, IsInt, Min, IsArray, IsString } from 'class-validator';
 
 export class GetKanjiQueryDto {
     @ApiPropertyOptional({
@@ -52,4 +52,13 @@ export class GetKanjiQueryDto {
     })
     @IsArray()
     jlptLevel?: number[];
+
+    @ApiPropertyOptional({
+        example: 'rain',
+        description: 'Search term to filter kanji by kanji character, kana readings, or English meaning',
+        type: String
+    })
+    @IsOptional()
+    @IsString()
+    query?: string;
 } 
