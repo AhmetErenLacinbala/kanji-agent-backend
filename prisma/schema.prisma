@@ -14,36 +14,83 @@ datasource db {
 }
 
 model Kanji {
-  id              String     @id @default(auto()) @map("_id") @db.ObjectId
-  kanji           String
-  meaning         String
-  kana            String[]
-  kanjiPoint      Int
-  jlptLevel       Int
-  exampleSentences Sentence[] @relation("KanjiSentences") // Relation name
-  isDeleted       Boolean?   @default(false)
-  deletedAt       DateTime?
-  createdAt       DateTime   @default(now())
-  updatedAt       DateTime   @updatedAt
+  id               String              @id @default(auto()) @map("_id") @db.ObjectId
+  kanji            String
+  meaning          String
+  kana             String[]
+  kanjiPoint       Int
+  jlptLevel        Int
+  exampleSentences Sentence[]          @relation("KanjiSentences") // Relation name
+  isDeleted        Boolean?            @default(false)
+  deletedAt        DateTime?
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+  deckKanjis       DeckKanji[]
+  kanjiProgress    UserKanjiProgress[]
 }
 
 model Sentence {
-  id             String   @id @default(auto()) @map("_id") @db.ObjectId
-  sentence       String
-  meaning        String
-  kana           String
-  counter        Int      @default(0)
-  usedKanjiForm  String? 
-  whitelist      String[] @default([])
-  kanjiId        String   @db.ObjectId
-  kanji          Kanji    @relation("KanjiSentences", fields: [kanjiId], references: [id])
-  createdAt      DateTime @default(now())
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  sentence      String
+  meaning       String
+  kana          String
+  counter       Int      @default(0)
+  usedKanjiForm String?
+  whitelist     String[] @default([])
+  kanjiId       String   @db.ObjectId
+  kanji         Kanji    @relation("KanjiSentences", fields: [kanjiId], references: [id])
+  createdAt     DateTime @default(now())
 }
 
-
 model User {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  email     String   @unique
-  password  String
+  id                String              @id @default(auto()) @map("_id") @db.ObjectId
+  email             String              @unique
+  password          String
+  createdAt         DateTime            @default(now())
+  decksOwned        Deck[]              @relation("DeckOwner")
+  decksUsed         Deck[]              @relation("DeckUser")
+  UserKanjiProgress UserKanjiProgress[]
+}
+
+model Deck {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  isAuto     Boolean  @default(true) // true = user's custom, false = system default
+  userId     String?  @db.ObjectId // Optional for anonymous users
+  ownerId    String?  @db.ObjectId // Optional for anonymous users
+  owner      User?    @relation("DeckOwner", fields: [ownerId], references: [id])
+  user       User?    @relation("DeckUser", fields: [userId], references: [id])
+  editbyUser Boolean
+  isAnonymous Boolean @default(false) // true = created by unregistered user (cookie-based)
+  createdAt  DateTime @default(now())
+
+  isDeleted Boolean?    @default(false)
+  kanjis    DeckKanji[]
+}
+
+model DeckKanji {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  deckId  String @db.ObjectId
+  kanjiId String @db.ObjectId
+  deck    Deck   @relation(fields: [deckId], references: [id])
+  kanji   Kanji  @relation(fields: [kanjiId], references: [id])
+}
+
+model UserKanjiProgress {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  userId  String @db.ObjectId
+  kanjiId String @db.ObjectId
+  user    User   @relation(fields: [userId], references: [id])
+  kanji   Kanji  @relation(fields: [kanjiId], references: [id])
+
+  easeFactor         Float    @default(2.5)
+  interval           Int      @default(1) // gün
+  nextReviewAt       DateTime
+  lastReviewedAt     DateTime
+  consecutiveCorrect Int      @default(0)
+  wrongCount         Int      @default(0)
+  rightCount         Int      @default(0)
+
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
