@@ -75,12 +75,13 @@ export class DeckController {
         type: String,
         description: 'User ID for registered user decks'
     })
-    getDeckForFlashcards(
+    async getDeckForFlashcards(
         @Param('id') id: string,
         @Query('isAnonymous') isAnonymous?: string,
         @Query('userId') userId?: string
     ) {
-        return this.deckService.getDeckForFlashcards(id, isAnonymous === 'true', userId);
+        const deck = await this.deckService.getDeckForFlashcards(id, isAnonymous === 'true', userId);
+        return deck;
     }
 
     @Post(':id/add-random-kanji')

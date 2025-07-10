@@ -16,6 +16,11 @@ export class SentenceService {
                 kanji: {
                     connect: { id: dto.kanjiId },
                 },
+                tokenized: dto.tokenized.map(word => ({
+                    surface: word.surface,
+                    kana: word.kana,
+                    pos: word.pos,
+                })),
             }
         })
         return this.getSentenceById(createdSentence.id);
@@ -28,5 +33,6 @@ export class SentenceService {
                 kanji: true,
             },
         })
+
     }
 }

@@ -34,6 +34,7 @@ model Sentence {
   sentence      String
   meaning       String
   kana          String
+  tokenized     Word[]
   counter       Int      @default(0)
   usedKanjiForm String?
   whitelist     String[] @default([])
@@ -66,6 +67,12 @@ model Deck {
 
   isDeleted Boolean?    @default(false)
   kanjis    DeckKanji[]
+}
+
+type Word{
+  surface String
+  kana String
+  pos String
 }
 
 model DeckKanji {

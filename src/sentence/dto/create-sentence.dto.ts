@@ -13,4 +13,12 @@ export class CreateSentenceDto {
     kanjiId: string;
     @ApiProperty()
     whitelist: string[];
+    @ApiProperty()
+    tokenized: Word[];
+}
+
+export interface Word {
+    surface: string;
+    kana: string;
+    pos: string;
 }

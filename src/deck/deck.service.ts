@@ -2,9 +2,50 @@ import { Injectable } from '@nestjs/common';
 import { CreateDeckDto } from './dto/create-deck.dto/create-deck.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 
+import Kuroshiro from "kuroshiro";
+import * as KuromojiAnalyzer from "kuroshiro-analyzer-kuromoji";
+import * as kuromoji from "kuromoji";
+
+
+
+
+
 @Injectable()
 export class DeckService {
+    kuroshiro: Kuroshiro;
     constructor(private prisma: PrismaService) { }
+
+    async onModuleInit() {
+        this.kuroshiro = new Kuroshiro();
+        await this.kuroshiro.init(new KuromojiAnalyzer());
+        console.log('kuroshiro initialized')
+    }
+
+
+    async convertToHiragana(text: string) {
+        const tokens = await new Promise<any[]>((resolve, reject) => {
+            kuromoji.builder({ dicPath: "node_modules/kuromoji/dict" }).build((err, tokenizer) => {
+                if (err) return reject(err);
+                const t = tokenizer.tokenize(text);
+                resolve(t);
+            });
+        });
+
+        const tokenData = tokens.map(t => ({
+            surface: t.surface_form,
+            kana: this.katakanaToHiragana(t.reading) || t.surface_form,
+            pos: t.pos
+        }));
+
+        return tokenData
+    }
+
+
+    katakanaToHiragana(str: string): string {
+        return str.replace(/[\u30a1-\u30f6]/g, ch =>
+            String.fromCharCode(ch.charCodeAt(0) - 0x60)
+        );
+    }
 
     async createDeck(dto: CreateDeckDto, addRandomKanji: boolean = true, isAnonymous: boolean = true, userId?: string) {
         const createdDeck = await this.prisma.deck.create({
@@ -139,22 +180,38 @@ export class DeckService {
         });
     }
 
-    async getDeckForFlashcards(id: string, isAnonymous: boolean = false, userId?: string) {
+    async getDeckForFlashcards(id: string, isAnonymous = false, userId?: string) {
+        let deck;
+
         if (isAnonymous) {
-            return this.prisma.deck.findUnique({
-                where: {
-                    id,
-                    isAnonymous: true
-                },
+            deck = await this.prisma.deck.findUnique({
+                where: { id, isAnonymous: true },
                 include: {
                     kanjis: {
                         include: {
                             kanji: {
-                                include: {
-                                    exampleSentences: {
-                                        take: 1
-                                    }
-                                }
+                                include: { exampleSentences: { take: 1 } }
+                            }
+                        }
+                    }
+                }
+            });
+        } else {
+            const whereClause: any = { id };
+            if (userId) {
+                whereClause.OR = [
+                    { ownerId: userId },
+                    { userId: userId }
+                ];
+            }
+
+            deck = await this.prisma.deck.findUnique({
+                where: whereClause,
+                include: {
+                    kanjis: {
+                        include: {
+                            kanji: {
+                                include: { exampleSentences: { take: 1 } }
                             }
                         }
                     }
@@ -162,32 +219,26 @@ export class DeckService {
             });
         }
 
+        for (const deckKanji of deck.kanjis) {
+            const kanji = deckKanji.kanji;
 
-        const whereClause: any = { id };
-        if (userId) {
-            whereClause.OR = [
-                { ownerId: userId },
-                { userId: userId }
-            ];
-        }
+            for (const sentence of kanji.exampleSentences) {
+                if (!sentence.tokenized || sentence.tokenized.length === 0) {
+                    const tokenized = await this.convertToHiragana(sentence.sentence);
 
-        return this.prisma.deck.findUnique({
-            where: whereClause,
-            include: {
-                kanjis: {
-                    include: {
-                        kanji: {
-                            include: {
-                                exampleSentences: {
-                                    take: 1
-                                }
-                            }
-                        }
-                    }
+                    await this.prisma.sentence.update({
+                        where: { id: sentence.id },
+                        data: { tokenized }
+                    });
+
+                    sentence.tokenized = tokenized;
                 }
             }
-        });
+        }
+
+        return deck;
     }
+
 
     async getUsedDecks(userId: string) {
         const decks = await this.prisma.deck.findMany({
