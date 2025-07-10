@@ -13,23 +13,26 @@ import * as kuromoji from "kuromoji";
 @Injectable()
 export class DeckService {
     kuroshiro: Kuroshiro;
+    tokenizer: kuromoji.Tokenizer<kuromoji.IpadicFeatures>;
     constructor(private prisma: PrismaService) { }
 
     async onModuleInit() {
         this.kuroshiro = new Kuroshiro();
         await this.kuroshiro.init(new KuromojiAnalyzer());
-        console.log('kuroshiro initialized')
+
+        this.tokenizer = await new Promise((resolve, reject) => {
+            kuromoji.builder({ dicPath: "node_modules/kuromoji/dict" }).build((err, tokenizer) => {
+                if (err) return reject(err);
+                resolve(tokenizer);
+            });
+        });
+
+        console.log('kuroshiro and kuromoji initialized');
     }
 
 
     async convertToHiragana(text: string) {
-        const tokens = await new Promise<any[]>((resolve, reject) => {
-            kuromoji.builder({ dicPath: "node_modules/kuromoji/dict" }).build((err, tokenizer) => {
-                if (err) return reject(err);
-                const t = tokenizer.tokenize(text);
-                resolve(t);
-            });
-        });
+        const tokens = this.tokenizer.tokenize(text);
 
         const tokenData = tokens.map(t => ({
             surface: t.surface_form,
@@ -37,7 +40,7 @@ export class DeckService {
             pos: t.pos
         }));
 
-        return tokenData
+        return tokenData;
     }
 
 
