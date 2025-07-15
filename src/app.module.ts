@@ -11,8 +11,7 @@ import { AuthController } from './auth/auth.controller';
 import { AuthService } from './auth/auth.service';
 import { DeckModule } from './deck/deck.module';
 import { UserKanjiProgressModule } from './user-kanji-progress/user-kanji-progress.module';
-import { DeckKanjiModule } from './deck-kanji/deck-kanji.module'
-import { UserKanjiProgressModule } from './user-kanji-progress/user-kanji-progress.module';
+import { DeckKanjiModule } from './deck-kanji/deck-kanji.module';
 
 
 
