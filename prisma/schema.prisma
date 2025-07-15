@@ -90,7 +90,6 @@ model UserKanjiProgress {
   user    User   @relation(fields: [userId], references: [id])
   kanji   Kanji  @relation(fields: [kanjiId], references: [id])
 
-  easeFactor         Float    @default(2.5)
   interval           Int      @default(1) // gün
   nextReviewAt       DateTime
   lastReviewedAt     DateTime

@@ -3,7 +3,7 @@ import { UserKanjiProgressService } from './user-kanji-progress.service';
 import { UserKanjiProgressController } from './user-kanji-progress.controller';
 
 @Module({
+  controllers: [UserKanjiProgressController],
   providers: [UserKanjiProgressService],
-  controllers: [UserKanjiProgressController]
 })
-export class UserKanjiProgressModule { }
+export class UserKanjiProgressModule {}
