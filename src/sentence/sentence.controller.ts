@@ -1,5 +1,5 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
-import { ApiBody, ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Get, Post, Param } from '@nestjs/common';
+import { ApiBody, ApiTags, ApiParam } from '@nestjs/swagger';
 import { SentenceService } from './sentence.service';
 import { CreateSentenceDto } from './dto/create-sentence.dto';
 
@@ -11,6 +11,17 @@ export class SentenceController {
     @Get("/test")
     getTest() {
         return "test return";
+    }
+
+    @Get('question/:id')
+    @ApiParam({
+        name: 'id',
+        required: true,
+        type: String,
+        description: 'Sentence ID to get question details for testing broken questions'
+    })
+    getQuestion(@Param('id') id: string) {
+        return this.sentenceService.getQuestionById(id);
     }
 
     @Post()

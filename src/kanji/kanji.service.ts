@@ -38,6 +38,50 @@ export class KanjiService {
             },
         });
     }
+
+    async getQuestionById(id: string) {
+        const kanji = await this.prisma.kanji.findUnique({
+            where: { id },
+            include: {
+                exampleSentences: {
+                    orderBy: {
+                        counter: 'desc'
+                    }
+                },
+            },
+        });
+
+        if (!kanji) {
+            throw new Error('Kanji question not found');
+        }
+
+        // Format for testing purposes
+        return {
+            id: kanji.id,
+            kanji: kanji.kanji,
+            meaning: kanji.meaning,
+            kana: kanji.kana,
+            jlptLevel: kanji.jlptLevel,
+            kanjiPoint: kanji.kanjiPoint,
+            exampleSentences: kanji.exampleSentences.map(sentence => ({
+                id: sentence.id,
+                sentence: sentence.sentence,
+                meaning: sentence.meaning,
+                kana: sentence.kana,
+                tokenized: sentence.tokenized,
+                counter: sentence.counter,
+                usedKanjiForm: sentence.usedKanjiForm,
+                whitelist: sentence.whitelist
+            })),
+            testInfo: {
+                totalSentences: kanji.exampleSentences.length,
+                hasValidSentences: kanji.exampleSentences.length > 0,
+                sentenceCounters: kanji.exampleSentences.map(s => s.counter),
+                createdAt: kanji.createdAt,
+                updatedAt: kanji.updatedAt
+            }
+        };
+    }
     async getByKanjiString(kanji: string) {
         return this.prisma.kanji.findMany({
             where: { kanji },

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Query, UseGuards, Headers, UnauthorizedException } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query, UseGuards, Headers, UnauthorizedException, Patch } from '@nestjs/common';
 import { ApiBody, ApiQuery, ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 import { Throttle } from '@nestjs/throttler';
 import { DeckService } from './deck.service';
@@ -166,5 +166,113 @@ export class DeckController {
     ) {
         const userId = this.getUserIdFromToken(authHeader);
         return this.deckService.completeStudySession(deckId, userId, dto);
+    }
+
+    // ==== TESTING ENDPOINTS (Development only) ====
+
+    @Get('testing/info')
+    async getTestingInfo() {
+
+        if (process.env.NODE_ENV === 'production' && process.env.SPACED_REPETITION_DEV_MODE !== 'true') {
+            throw new UnauthorizedException('Testing endpoints only available in development mode');
+        }
+        return this.deckService.getTestingInfo();
+    }
+
+    @Patch('testing/kanji/:kanjiId/reset')
+    @ApiBearerAuth()
+    async resetKanjiProgress(
+        @Headers('authorization') authHeader: string,
+        @Param('kanjiId') kanjiId: string
+    ) {
+        if (process.env.NODE_ENV === 'production' && process.env.SPACED_REPETITION_DEV_MODE !== 'true') {
+            throw new UnauthorizedException('Testing endpoints only available in development mode');
+        }
+        const userId = this.getUserIdFromToken(authHeader);
+        return this.deckService.resetKanjiProgress(userId, kanjiId);
+    }
+
+    @Patch('testing/kanji/:kanjiId/schedule')
+    @ApiBearerAuth()
+    @ApiQuery({
+        name: 'minutes',
+        required: false,
+        type: Number,
+        description: 'Minutes from now to schedule review (default: 0 for immediate)'
+    })
+    async setKanjiReviewTime(
+        @Headers('authorization') authHeader: string,
+        @Param('kanjiId') kanjiId: string,
+        @Query('minutes') minutes?: string
+    ) {
+        if (process.env.NODE_ENV === 'production' && process.env.SPACED_REPETITION_DEV_MODE !== 'true') {
+            throw new UnauthorizedException('Testing endpoints only available in development mode');
+        }
+        const userId = this.getUserIdFromToken(authHeader);
+        const minutesFromNow = minutes ? parseInt(minutes) : 0;
+        return this.deckService.setKanjiReviewTime(userId, kanjiId, minutesFromNow);
+    }
+
+    @Patch('testing/deck/:deckId/schedule-all')
+    @ApiBearerAuth()
+    async setAllKanjiForImmediateReview(
+        @Headers('authorization') authHeader: string,
+        @Param('deckId') deckId: string
+    ) {
+        if (process.env.NODE_ENV === 'production' && process.env.SPACED_REPETITION_DEV_MODE !== 'true') {
+            throw new UnauthorizedException('Testing endpoints only available in development mode');
+        }
+        const userId = this.getUserIdFromToken(authHeader);
+        return this.deckService.setAllKanjiForImmediateReview(userId, deckId);
+    }
+
+    @Patch('testing/kanji/:kanjiId/simulate')
+    @ApiBearerAuth()
+    @ApiQuery({
+        name: 'correctAnswers',
+        required: true,
+        type: Number,
+        description: 'Number of consecutive correct answers to simulate (0-11)'
+    })
+    async simulateKanjiProgression(
+        @Headers('authorization') authHeader: string,
+        @Param('kanjiId') kanjiId: string,
+        @Query('correctAnswers') correctAnswers: string
+    ) {
+        if (process.env.NODE_ENV === 'production' && process.env.SPACED_REPETITION_DEV_MODE !== 'true') {
+            throw new UnauthorizedException('Testing endpoints only available in development mode');
+        }
+        const userId = this.getUserIdFromToken(authHeader);
+        const answers = parseInt(correctAnswers);
+        if (answers < 0 || answers > 11) {
+            throw new UnauthorizedException('correctAnswers must be between 0 and 11');
+        }
+        return this.deckService.simulateKanjiProgression(userId, kanjiId, answers);
+    }
+
+    @Get('testing/deck/:deckId/diagnostics')
+    @ApiBearerAuth()
+    async getDeckDiagnostics(
+        @Headers('authorization') authHeader: string,
+        @Param('deckId') deckId: string
+    ) {
+        if (process.env.NODE_ENV === 'production' && process.env.SPACED_REPETITION_DEV_MODE !== 'true') {
+            throw new UnauthorizedException('Testing endpoints only available in development mode');
+        }
+        const userId = this.getUserIdFromToken(authHeader);
+        return this.deckService.getDeckDiagnostics(deckId, userId);
+    }
+
+    @Post('testing/deck/:deckId/ensure-progress')
+    @ApiBearerAuth()
+    async ensureProgressRecords(
+        @Headers('authorization') authHeader: string,
+        @Param('deckId') deckId: string
+    ) {
+        if (process.env.NODE_ENV === 'production' && process.env.SPACED_REPETITION_DEV_MODE !== 'true') {
+            throw new UnauthorizedException('Testing endpoints only available in development mode');
+        }
+        const userId = this.getUserIdFromToken(authHeader);
+        return this.deckService.ensureProgressRecords(deckId, userId);
     }
 }

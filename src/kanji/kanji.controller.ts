@@ -37,6 +37,17 @@ export class KanjiController {
         return this.kanjiService.getKanjiWithPagination(query);
     }
 
+    @Get('question/:id')
+    @ApiQuery({
+        name: 'id',
+        required: true,
+        type: String,
+        description: 'Kanji ID to get question details for testing broken questions'
+    })
+    getQuestion(@Param('id') id: string) {
+        return this.kanjiService.getQuestionById(id);
+    }
+
     @Get(':id')
     getOne(@Param('id') id: string) {
         return this.kanjiService.getKanjiById(id);

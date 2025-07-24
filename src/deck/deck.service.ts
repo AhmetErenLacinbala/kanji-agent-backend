@@ -8,6 +8,22 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class DeckService {
     constructor(private prisma: PrismaService) { }
 
+    // Development mode for testing - converts days to minutes
+    private readonly DEV_MODE = process.env.NODE_ENV === 'development' || process.env.SPACED_REPETITION_DEV_MODE === 'true';
+    private readonly DEV_TIME_MULTIPLIER = parseInt(process.env.DEV_TIME_MULTIPLIER || '60');
+
+
+    private getTimeMultiplier(): number {
+        return this.DEV_MODE ? this.DEV_TIME_MULTIPLIER : 24 * 60;
+    }
+
+
+    private calculateNextReviewDate(intervalInDays: number): Date {
+        const now = new Date();
+        const multiplier = this.getTimeMultiplier();
+        return new Date(now.getTime() + intervalInDays * multiplier * 60 * 1000);
+    }
+
     async createDeck(dto: CreateDeckDto, addRandomKanji: boolean = true, userId: string) {
         const createdDeck = await this.prisma.deck.create({
             data: {
@@ -16,12 +32,12 @@ export class DeckService {
                 userId: userId,
                 ownerId: userId,
                 editbyUser: dto.editbyUser ?? true,
-                isAnonymous: false, // No longer needed - all users (including guests) are real users
+                isAnonymous: false,
             }
         });
 
         if (addRandomKanji) {
-            await this.addRandomKanjiToDeck(createdDeck.id, 3, userId);
+            await this.addRandomKanjiToDeck(createdDeck.id, 10, userId); // Increased from 3 to 10
         }
 
         return this.getDeckById(createdDeck.id, userId);
@@ -29,9 +45,9 @@ export class DeckService {
 
 
 
-    async addRandomKanjiToDeck(deckId: string, count: number = 3, userId?: string) {
-        // Security: Validate input parameters
-        if (count < 1 || count > 50) {
+    async addRandomKanjiToDeck(deckId: string, count: number = 10, userId?: string) {
+
+        if (count < 0 || count > 50) {
             throw new Error('Count must be between 1 and 50');
         }
 
@@ -86,11 +102,11 @@ export class DeckService {
 
         await Promise.all(deckKanjiPromises);
 
-        // Initialize UserKanjiProgress records for the new kanji if userId is provided
+
         if (userId) {
             const now = new Date();
-            const initialInterval = 1; // Start with 1 day interval
-            const nextReviewAt = now; // Make new kanji immediately available for review
+            const initialInterval = 1;
+            const nextReviewAt = now;
 
             const progressPromises = kanjiToAdd.map(async (kanji) => {
                 // Check if progress record already exists
@@ -122,7 +138,7 @@ export class DeckService {
             await Promise.all(progressPromises);
         }
 
-        // Group by JLPT level for response
+
         const kanjiByLevel = kanjiToAdd.reduce((acc, kanji) => {
             const level = `N${kanji.jlptLevel}`;
             if (!acc[level]) acc[level] = [];
@@ -224,7 +240,6 @@ export class DeckService {
         for (const progressUpdate of dto.progressUpdates) {
             const { kanjiId, isCorrect } = progressUpdate;
 
-            // Find existing progress or create new one
             let userProgress = await this.prisma.userKanjiProgress.findFirst({
                 where: {
                     userId,
@@ -235,9 +250,8 @@ export class DeckService {
             const now = new Date();
 
             if (!userProgress) {
-                // Create new progress record with initial values
-                const initialInterval = lookupTable[0]; // 1 day
-                const nextReviewAt = now; // Make immediately available for review
+                const initialInterval = lookupTable[0];
+                const nextReviewAt = now;
 
                 userProgress = await this.prisma.userKanjiProgress.create({
                     data: {
@@ -252,36 +266,36 @@ export class DeckService {
                     }
                 });
             } else {
-                // Update existing progress using spaced repetition algorithm
+
                 let newConsecutiveCorrect = userProgress.consecutiveCorrect;
                 let newInterval = userProgress.interval;
                 let nextReviewAt: Date;
 
                 if (isCorrect) {
-                    // Check if kanji is already at maximum interval (365 days)
-                    const maxInterval = lookupTable[lookupTable.length - 1]; // 365 days
+
+                    const maxInterval = lookupTable[lookupTable.length - 1];
 
                     if (userProgress.interval >= maxInterval) {
-                        // User got it correct at 365-day level - RETIRE the kanji!
+
                         newConsecutiveCorrect = userProgress.consecutiveCorrect + 1;
                         newInterval = 999999; // Special value indicating retirement
 
-                        // Set review date to far future (year 2099) - effectively never
+
                         nextReviewAt = new Date('2099-12-31T23:59:59.000Z');
 
                         console.log(`🎉 Kanji ${kanjiId} has been RETIRED! User has mastered it completely.`);
                     } else {
-                        // Normal progression: move to next interval level
+
                         newConsecutiveCorrect = userProgress.consecutiveCorrect + 1;
                         const intervalIndex = Math.min(newConsecutiveCorrect, lookupTable.length - 1);
                         newInterval = lookupTable[intervalIndex];
-                        nextReviewAt = new Date(now.getTime() + newInterval * 24 * 60 * 60 * 1000);
+                        nextReviewAt = this.calculateNextReviewDate(newInterval);
                     }
                 } else {
-                    // Wrong answer: reset to beginning but keep some progress
+
                     newConsecutiveCorrect = 0;
-                    newInterval = lookupTable[0]; // Reset to 1 day
-                    nextReviewAt = new Date(now.getTime() + newInterval * 24 * 60 * 60 * 1000);
+                    newInterval = lookupTable[0];
+                    nextReviewAt = this.calculateNextReviewDate(newInterval);
                 }
 
                 userProgress = await this.prisma.userKanjiProgress.update({
@@ -325,11 +339,11 @@ export class DeckService {
                 lte: now
             },
             interval: {
-                lt: 999999  // Exclude retired kanji (interval < 999999)
+                lt: 999999
             }
         };
 
-        // If deckId is provided, filter by kanji in that deck
+
         if (deckId) {
             whereClause.kanji = {
                 deckKanjis: {
@@ -366,11 +380,11 @@ export class DeckService {
         const whereClause: any = {
             userId,
             interval: {
-                gte: 999999  // Only retired/mastered kanji
+                gte: 999999
             }
         };
 
-        // If deckId is provided, filter by kanji in that deck
+
         if (deckId) {
             whereClause.kanji = {
                 deckKanjis: {
@@ -393,7 +407,7 @@ export class DeckService {
                 }
             },
             orderBy: {
-                updatedAt: 'desc'  // Most recently mastered first
+                updatedAt: 'desc'
             }
         });
 
@@ -426,7 +440,7 @@ export class DeckService {
         });
         console.log(`DEBUG: Deck ${deckId} has ${deckKanjis.length} kanji`);
 
-        // Debug: Check UserKanjiProgress records for this user/deck
+
         const allProgressForDeck = await this.prisma.userKanjiProgress.findMany({
             where: {
                 userId,
@@ -445,7 +459,7 @@ export class DeckService {
 
             const now = new Date();
             const initialInterval = 1;
-            const nextReviewAt = now; // Make kanji immediately available for review
+            const nextReviewAt = now;
 
             const progressPromises = deckKanjis.map(deckKanji =>
                 this.prisma.userKanjiProgress.create({
@@ -466,7 +480,7 @@ export class DeckService {
             console.log(`DEBUG: Created ${deckKanjis.length} progress records`);
         }
 
-        // Get kanji due for review in this specific deck
+
         const now = new Date();
 
         const kanjiForReview = await this.prisma.userKanjiProgress.findMany({
@@ -496,13 +510,13 @@ export class DeckService {
                 }
             },
             orderBy: {
-                nextReviewAt: 'asc'  // Most overdue first
+                nextReviewAt: 'asc'
             }
         });
 
         console.log(`DEBUG: Found ${kanjiForReview.length} kanji due for review`);
 
-        // If no kanji are due for review, return empty flashcards
+
         if (kanjiForReview.length === 0) {
             return {
                 id: deck.id,
@@ -513,7 +527,7 @@ export class DeckService {
             };
         }
 
-        // Format the response similar to getDeckForFlashcards
+
         const formattedKanjis = kanjiForReview.map(progress => ({
             kanji: progress.kanji,
             progress: {
@@ -534,7 +548,7 @@ export class DeckService {
     }
 
     async completeStudySession(deckId: string, userId: string, dto: StudyCompleteDto) {
-        // 1. Update kanji progress first
+
         const progressResult = await this.updateKanjiProgress(deckId, userId, {
             progressUpdates: dto.progressUpdates
         });
@@ -542,16 +556,16 @@ export class DeckService {
         let addKanjiResult: any = null;
         let shouldAddKanji = false;
 
-        // 2. Determine if new kanji should be added
+
         if (dto.addNewKanji) {
-            // Explicit request to add new kanji
+
             shouldAddKanji = true;
         } else if (dto.autoAddBasedOnProgress) {
-            // Auto-add based on progress analysis
+
             const masteryThreshold = dto.masteryThresholdDays || 7;
             const masteryCountThreshold = dto.masteryCountThreshold || 5;
 
-            // Check current mastery levels from existing progress
+
             const existingProgress = await this.prisma.userKanjiProgress.findMany({
                 where: {
                     userId,
@@ -572,7 +586,7 @@ export class DeckService {
             }
         }
 
-        // 3. Add new kanji if conditions are met
+
         if (shouldAddKanji) {
             const newKanjiCount = dto.newKanjiCount || 5;
             try {
@@ -586,10 +600,10 @@ export class DeckService {
             }
         }
 
-        // 4. Get updated review status
+
         const reviewStatus = await this.getKanjiForReview(userId, deckId);
 
-        // 5. Return combined result
+
         return {
             studySessionComplete: true,
             progressUpdate: {
@@ -612,6 +626,196 @@ export class DeckService {
                 ...reviewStatus,
                 deckSpecific: true
             }
+        };
+    }
+
+
+    async resetKanjiProgress(userId: string, kanjiId: string) {
+        return this.prisma.userKanjiProgress.updateMany({
+            where: { userId, kanjiId },
+            data: {
+                interval: 1,
+                nextReviewAt: new Date(),
+                consecutiveCorrect: 0,
+                wrongCount: 0,
+                rightCount: 0,
+                lastReviewedAt: new Date()
+            }
+        });
+    }
+
+    async setKanjiReviewTime(userId: string, kanjiId: string, minutesFromNow: number = 0) {
+        const nextReviewAt = new Date(Date.now() + minutesFromNow * 60 * 1000);
+        return this.prisma.userKanjiProgress.updateMany({
+            where: { userId, kanjiId },
+            data: { nextReviewAt }
+        });
+    }
+
+    async setAllKanjiForImmediateReview(userId: string, deckId?: string) {
+        const whereClause: any = { userId };
+
+        if (deckId) {
+            whereClause.kanji = {
+                deckKanjis: {
+                    some: { deckId }
+                }
+            };
+        }
+
+        return this.prisma.userKanjiProgress.updateMany({
+            where: whereClause,
+            data: { nextReviewAt: new Date() }
+        });
+    }
+
+    async simulateKanjiProgression(userId: string, kanjiId: string, correctAnswers: number) {
+        const lookupTable = [1, 1, 2, 4, 7, 14, 30, 60, 90, 180, 365];
+        const intervalIndex = Math.min(correctAnswers, lookupTable.length - 1);
+        const interval = lookupTable[intervalIndex];
+
+        return this.prisma.userKanjiProgress.updateMany({
+            where: { userId, kanjiId },
+            data: {
+                interval,
+                consecutiveCorrect: correctAnswers,
+                rightCount: correctAnswers,
+                nextReviewAt: this.calculateNextReviewDate(interval),
+                lastReviewedAt: new Date()
+            }
+        });
+    }
+
+
+    getTestingInfo() {
+        return {
+            devMode: this.DEV_MODE,
+            timeMultiplier: this.getTimeMultiplier(),
+            timeUnit: this.DEV_MODE ? 'minutes' : 'minutes (24*60 for days)',
+            intervals: this.DEV_MODE
+                ? 'Intervals: 1min, 1min, 2min, 4min, 7min, 14min, 30min, 60min, 90min, 180min, 365min'
+                : 'Intervals: 1day, 1day, 2days, 4days, 7days, 14days, 30days, 60days, 90days, 180days, 365days'
+        };
+    }
+
+    // Diagnostic method to check deck status
+    async getDeckDiagnostics(deckId: string, userId: string) {
+        const deck = await this.prisma.deck.findFirst({
+            where: {
+                id: deckId,
+                OR: [
+                    { ownerId: userId },
+                    { userId: userId }
+                ]
+            }
+        });
+
+        if (!deck) {
+            throw new Error('Deck not found or access denied');
+        }
+
+        const totalKanji = await this.prisma.deckKanji.count({
+            where: { deckId }
+        });
+
+        const progressRecords = await this.prisma.userKanjiProgress.findMany({
+            where: {
+                userId,
+                kanji: {
+                    deckKanjis: {
+                        some: { deckId }
+                    }
+                }
+            },
+            include: {
+                kanji: {
+                    select: {
+                        kanji: true,
+                        meaning: true
+                    }
+                }
+            }
+        });
+
+        const now = new Date();
+        const dueForReview = progressRecords.filter(p => p.nextReviewAt <= now && p.interval < 999999);
+        const mastered = progressRecords.filter(p => p.interval >= 999999);
+        const learning = progressRecords.filter(p => p.interval < 999999 && p.nextReviewAt > now);
+
+        return {
+            deck: {
+                id: deck.id,
+                name: deck.name,
+                totalKanji
+            },
+            progress: {
+                total: progressRecords.length,
+                dueForReview: dueForReview.length,
+                learning: learning.length,
+                mastered: mastered.length,
+                missingProgress: totalKanji - progressRecords.length
+            },
+            dueKanji: dueForReview.map(p => ({
+                kanji: p.kanji.kanji,
+                meaning: p.kanji.meaning,
+                interval: p.interval,
+                consecutiveCorrect: p.consecutiveCorrect,
+                nextReviewAt: p.nextReviewAt,
+                overdueby: Math.floor((now.getTime() - p.nextReviewAt.getTime()) / (1000 * 60 * 60)), // hours overdue
+                wrongCount: p.wrongCount,
+                rightCount: p.rightCount
+            }))
+        };
+    }
+
+    // Method to ensure all deck kanji have progress records
+    async ensureProgressRecords(deckId: string, userId: string) {
+        const deckKanjis = await this.prisma.deckKanji.findMany({
+            where: { deckId },
+            include: { kanji: true }
+        });
+
+        const existingProgress = await this.prisma.userKanjiProgress.findMany({
+            where: {
+                userId,
+                kanji: {
+                    deckKanjis: {
+                        some: { deckId }
+                    }
+                }
+            }
+        });
+
+        const existingKanjiIds = existingProgress.map(p => p.kanjiId);
+        const missingKanjiIds = deckKanjis
+            .filter(dk => !existingKanjiIds.includes(dk.kanjiId))
+            .map(dk => dk.kanjiId);
+
+        if (missingKanjiIds.length > 0) {
+            const now = new Date();
+            const progressPromises = missingKanjiIds.map(kanjiId =>
+                this.prisma.userKanjiProgress.create({
+                    data: {
+                        userId,
+                        kanjiId,
+                        interval: 1,
+                        nextReviewAt: now,
+                        lastReviewedAt: now,
+                        consecutiveCorrect: 0,
+                        wrongCount: 0,
+                        rightCount: 0,
+                    }
+                })
+            );
+
+            await Promise.all(progressPromises);
+            console.log(`Created ${missingKanjiIds.length} missing progress records for deck ${deckId}`);
+        }
+
+        return {
+            totalKanji: deckKanjis.length,
+            existingProgress: existingProgress.length,
+            createdProgress: missingKanjiIds.length
         };
     }
 
