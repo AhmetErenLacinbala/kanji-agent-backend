@@ -24,18 +24,15 @@ ENV NODE_ENV=production \
     PORT=3000
 
 # Minimal runtime deps + init, add non-root user
-RUN apt-get update -y && apt-get install -y --no-install-recommends dumb-init \
+RUN apt-get update -y && apt-get install -y --no-install-recommends dumb-init openssl \
     && rm -rf /var/lib/apt/lists/* \
     && useradd -ms /bin/bash nodeuser
 
-# Only prod deps
+# Copy package files for reference
 COPY package*.json ./
-RUN npm ci --omit=dev
 
-# Prisma schema & generated client
-COPY --from=build /app/prisma ./prisma
-COPY --from=build /app/node_modules/.prisma ./node_modules/.prisma
-COPY --from=build /app/node_modules/@prisma ./node_modules/@prisma
+# Copy all node_modules from build stage (already includes prod deps)
+COPY --from=build /app/node_modules ./node_modules
 
 # Built app
 COPY --from=build /app/dist ./dist
