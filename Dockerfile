@@ -13,9 +13,9 @@ RUN npm ci
 
 # Copy source (including prisma) and build
 COPY . .
-# Generate Prisma client (safe even if not used during build)
 RUN npx prisma generate || true
 RUN npm run build
+RUN npm prune --production
 
 # ---------- runtime stage ----------
 FROM node:20-slim AS runtime
