@@ -13,9 +13,9 @@ RUN npm ci
 
 # Copy source (including prisma) and build
 COPY . .
+# Generate Prisma client (safe even if not used during build)
 RUN npx prisma generate || true
 RUN npm run build
-RUN npm prune --production
 
 # ---------- runtime stage ----------
 FROM node:20-slim AS runtime
@@ -24,15 +24,18 @@ ENV NODE_ENV=production \
     PORT=3000
 
 # Minimal runtime deps + init, add non-root user
-RUN apt-get update -y && apt-get install -y --no-install-recommends dumb-init openssl \
+RUN apt-get update -y && apt-get install -y --no-install-recommends dumb-init \
     && rm -rf /var/lib/apt/lists/* \
     && useradd -ms /bin/bash nodeuser
 
-# Copy package files for reference
+# Only prod deps
 COPY package*.json ./
+RUN npm ci --production
 
-# Copy all node_modules from build stage (already includes prod deps)
-COPY --from=build /app/node_modules ./node_modules
+# Prisma schema & generated client
+COPY --from=build /app/prisma ./prisma
+COPY --from=build /app/node_modules/.prisma ./node_modules/.prisma
+COPY --from=build /app/node_modules/@prisma ./node_modules/@prisma
 
 # Built app
 COPY --from=build /app/dist ./dist
